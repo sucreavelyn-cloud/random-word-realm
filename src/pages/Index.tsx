@@ -1,12 +1,20 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useMemo } from "react";
+
+const words = [
+  "ephemeral", "solitude", "cascade", "whisper", "labyrinth",
+  "aurora", "reverie", "obsidian", "serendipity", "velvet",
+  "phantom", "mosaic", "enigma", "horizon", "ember",
+  "nebula", "echo", "drift", "fracture", "silhouette",
+];
 
 const Index = () => {
+  const word = useMemo(() => words[Math.floor(Math.random() * words.length)], []);
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+      <span className="text-5xl font-light tracking-widest text-foreground lowercase">
+        {word}
+      </span>
     </div>
   );
 };
