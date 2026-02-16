@@ -23,7 +23,7 @@ const Header = () => {
     { label: t('Domov', 'Home'), to: '/' },
     { label: 'Portfolio', to: '/portfolio' },
     { label: 'Blog', to: '/blog' },
-    { label: t('O Nas', 'About'), to: '/o-nas' },
+    
     { label: t('Cenik', 'Pricing'), to: '/cenik' },
     { label: t('Kontakt', 'Contact'), to: '/kontakt' },
   ];
@@ -82,7 +82,7 @@ const Header = () => {
 
             <Link to="/portfolio" className="px-3 py-2 text-sm text-hero-muted hover:text-primary-foreground transition-colors">Portfolio</Link>
             <Link to="/blog" className="px-3 py-2 text-sm text-hero-muted hover:text-primary-foreground transition-colors">Blog</Link>
-            <Link to="/o-nas" className="px-3 py-2 text-sm text-hero-muted hover:text-primary-foreground transition-colors">{t('O Nas', 'About')}</Link>
+            
             <Link to="/cenik" className="px-3 py-2 text-sm text-hero-muted hover:text-primary-foreground transition-colors">{t('Cenik', 'Pricing')}</Link>
           </nav>
 
