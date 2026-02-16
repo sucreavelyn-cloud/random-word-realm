@@ -64,7 +64,7 @@ const HowItWorks = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            {t('KAKO DELUJE', 'HOW IT WORKS')}
+            {t('KAKO DELAMO', 'HOW WE WORK')}
           </motion.p>
         </div>
         <motion.h2
@@ -97,84 +97,64 @@ const HowItWorks = () => {
           {steps.map((step, i) => {
             const isLeft = i % 2 === 0;
 
+            const cardContent = (
+              <div className="bg-badge-bg/70 backdrop-blur-sm border border-badge-border rounded-2xl p-7 transition-all duration-300 hover:border-primary/30">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <step.icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <h3 className="font-heading font-bold text-xl text-primary-foreground">
+                    {t(step.title.si, step.title.en)}
+                  </h3>
+                </div>
+                <p className="text-hero-muted text-[15px] leading-relaxed mb-4">
+                  {t(step.desc.si, step.desc.en)}
+                </p>
+                <ul className="space-y-1.5">
+                  {step.features.map((f, fi) => (
+                    <li key={fi} className="flex items-center gap-2 text-[13px] text-hero-muted">
+                      <Check className="w-3.5 h-3.5 text-primary flex-shrink-0" />
+                      {t(f.si, f.en)}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+
+            const centerNode = (
+              <div className="flex-shrink-0 w-20 flex items-center justify-center relative z-10">
+                <motion.div
+                  className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-heading font-bold text-lg shadow-glow-primary"
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ type: 'spring', delay: 0.3 + i * 0.15 }}
+                >
+                  {step.num}
+                </motion.div>
+              </div>
+            );
+
             return (
               <motion.div
                 key={i}
-                className={`relative flex flex-col md:flex-row items-center gap-6 md:gap-0 mb-20 last:mb-0`}
+                className="relative flex flex-col md:flex-row items-center gap-6 md:gap-0 mb-20 last:mb-0"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, delay: 0.15 * i }}
               >
-                {/* Left content or spacer */}
-                <div className={`w-full md:w-[calc(50%-40px)] ${isLeft ? 'md:order-1' : 'md:order-3 md:text-left'}`}>
-                  {isLeft ? (
-                    <div className="bg-badge-bg/70 backdrop-blur-sm border border-badge-border rounded-2xl p-7 transition-all duration-300 hover:border-primary/30">
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                          <step.icon className="w-5 h-5 text-primary" />
-                        </div>
-                        <h3 className="font-heading font-bold text-xl text-primary-foreground">
-                          {t(step.title.si, step.title.en)}
-                        </h3>
-                      </div>
-                      <p className="text-hero-muted text-[15px] leading-relaxed mb-4">
-                        {t(step.desc.si, step.desc.en)}
-                      </p>
-                      <ul className="space-y-1.5">
-                        {step.features.map((f, fi) => (
-                          <li key={fi} className="flex items-center gap-2 text-[13px] text-hero-muted">
-                            <Check className="w-3.5 h-3.5 text-primary flex-shrink-0" />
-                            {t(f.si, f.en)}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ) : (
-                    <div className="hidden md:block" />
-                  )}
+                {/* Left column */}
+                <div className="w-full md:w-[calc(50%-40px)]">
+                  {isLeft ? cardContent : <div className="hidden md:block" />}
                 </div>
 
                 {/* Center node */}
-                <div className="md:order-2 flex-shrink-0 w-20 flex items-center justify-center relative z-10">
-                  <motion.div
-                    className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-heading font-bold text-lg shadow-glow-primary"
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ type: 'spring', delay: 0.3 + i * 0.15 }}
-                  >
-                    {step.num}
-                  </motion.div>
-                </div>
+                {centerNode}
 
-                {/* Right content or spacer */}
-                <div className={`w-full md:w-[calc(50%-40px)] ${isLeft ? 'md:order-3' : 'md:order-1'}`}>
-                  {!isLeft ? (
-                    <div className="bg-badge-bg/70 backdrop-blur-sm border border-badge-border rounded-2xl p-7 transition-all duration-300 hover:border-primary/30">
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                          <step.icon className="w-5 h-5 text-primary" />
-                        </div>
-                        <h3 className="font-heading font-bold text-xl text-primary-foreground">
-                          {t(step.title.si, step.title.en)}
-                        </h3>
-                      </div>
-                      <p className="text-hero-muted text-[15px] leading-relaxed mb-4">
-                        {t(step.desc.si, step.desc.en)}
-                      </p>
-                      <ul className="space-y-1.5">
-                        {step.features.map((f, fi) => (
-                          <li key={fi} className="flex items-center gap-2 text-[13px] text-hero-muted">
-                            <Check className="w-3.5 h-3.5 text-primary flex-shrink-0" />
-                            {t(f.si, f.en)}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ) : (
-                    <div className="hidden md:block" />
-                  )}
+                {/* Right column */}
+                <div className="w-full md:w-[calc(50%-40px)]">
+                  {!isLeft ? cardContent : <div className="hidden md:block" />}
                 </div>
               </motion.div>
             );
