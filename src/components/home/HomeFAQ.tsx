@@ -48,16 +48,15 @@ const HomeFAQ = () => {
       <div className="absolute inset-0 grain-overlay animate-grain pointer-events-none" />
       <div className="container mx-auto px-6 max-w-[900px] relative z-10">
         {/* Header */}
-        <motion.p
-          className="text-sm text-secondary uppercase tracking-[1.5px] text-center font-medium"
+        <motion.h2
+          className="font-heading font-bold text-3xl md:text-[48px] md:leading-tight text-primary-foreground text-center mb-10"
           initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5 }}
         >
           {t('POGOSTA VPRAŠANJA', 'FREQUENTLY ASKED QUESTIONS')}
-        </motion.p>
-        <div className="mb-16" />
+        </motion.h2>
 
         {/* Accordion */}
         <div className="flex flex-col gap-4">
