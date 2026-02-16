@@ -5,6 +5,7 @@ import { ArrowUpRight, TrendingUp, Utensils, Dumbbell } from 'lucide-react';
 
 const caseStudies = [
   {
+    id: 'ecommerce-moda',
     icon: TrendingUp,
     stat: '+150%',
     statLabel: { si: 'Prodaja', en: 'Sales' },
@@ -18,6 +19,7 @@ const caseStudies = [
     accent: 'primary',
   },
   {
+    id: 'restavracija-hrana',
     icon: Utensils,
     stat: '+80%',
     statLabel: { si: 'Rezervacije', en: 'Bookings' },
@@ -31,6 +33,7 @@ const caseStudies = [
     accent: 'secondary',
   },
   {
+    id: 'fitness-influencer',
     icon: Dumbbell,
     stat: '2M+',
     statLabel: { si: 'Ogledi', en: 'Views' },
@@ -129,7 +132,7 @@ const CaseStudiesPreview = () => {
 
               {/* Link */}
               <Link
-                to="/portfolio"
+                to={`/portfolio/${cs.id}`}
                 className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-all duration-300"
               >
                 {t('Preberi več', 'Read more')}

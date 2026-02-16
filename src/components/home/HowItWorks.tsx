@@ -23,13 +23,13 @@ const HowItWorks = () => {
     {
       icon: Bot,
       num: 2,
-      title: { si: 'AI Ustvarja', en: 'AI Creates' },
+      title: { si: 'Ustvarjamo z AI', en: 'We Create with AI' },
       desc: {
-        si: 'Naša AI tehnologija ustvari vašo vsebino v 24 urah z vrhunsko kakovostjo.',
-        en: 'Our AI technology creates your content in 24 hours with top-notch quality.',
+        si: 'Naša ekipa s pomočjo naprednih AI orodij ustvari vašo vsebino v 24 urah z vrhunsko kakovostjo.',
+        en: 'Our team uses advanced AI tools to create your content in 24 hours with top-notch quality.',
       },
       features: [
-        { si: 'Napredna AI tehnologija', en: 'Advanced AI technology' },
+        { si: 'Napredna AI orodja', en: 'Advanced AI tools' },
         { si: 'Človeški nadzor kakovosti', en: 'Human quality control' },
         { si: 'Iteracije vključene', en: 'Iterations included' },
       ],
@@ -95,7 +95,7 @@ const HowItWorks = () => {
           <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/40 via-secondary/40 to-primary/40 -translate-x-1/2" />
 
           {steps.map((step, i) => {
-            const isLeft = i % 2 !== 0;
+            const isLeft = i % 2 === 0;
 
             return (
               <motion.div
