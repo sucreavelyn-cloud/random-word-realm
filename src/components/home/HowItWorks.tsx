@@ -95,7 +95,7 @@ const HowItWorks = () => {
           <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/40 via-secondary/40 to-primary/40 -translate-x-1/2" />
 
           {steps.map((step, i) => {
-            const isLeft = i % 2 === 0;
+            const isLeft = i % 2 !== 0;
 
             return (
               <motion.div
