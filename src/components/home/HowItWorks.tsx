@@ -1,47 +1,42 @@
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
-
-const steps = [
-  {
-    num: '01',
-    icon: '📝',
-    borderColor: 'border-primary',
-    numColor: 'text-primary',
-    title: { si: 'Pošljete Navodila', en: 'Send Instructions' },
-    desc: {
-      si: 'Izpolnite kratek vprašalnik ali nam pošljite e-mail z opisom projekta. Povejte nam, kaj potrebujete – mi poskrbimo za vse ostalo.',
-      en: 'Fill out a short questionnaire or email us a project description. Tell us what you need – we take care of the rest.',
-    },
-    delay: 0.3,
-  },
-  {
-    num: '02',
-    icon: '🤖',
-    borderColor: 'border-secondary',
-    numColor: 'text-secondary',
-    title: { si: 'AI Ustvarja', en: 'AI Creates' },
-    desc: {
-      si: 'Naša napredna AI tehnologija ustvari vašo vsebino v 24-48 urah. Brez dolgih čakalnih vrst, brez odvisnosti od fotografov ali video ekip.',
-      en: 'Our advanced AI technology creates your content in 24-48 hours. No long queues, no dependence on photographers or video teams.',
-    },
-    delay: 0.6,
-  },
-  {
-    num: '03',
-    icon: '✨',
-    borderColor: 'border-accent',
-    numColor: 'text-accent',
-    title: { si: 'Prejmete Vsebino', en: 'Receive Content' },
-    desc: {
-      si: 'Prejemate končne datoteke v visoki ločljivosti, pripravljene za takojšnjo uporabo. Z neomejeno revizijo, če je potrebno kaj prilagoditi.',
-      en: 'Receive final files in high resolution, ready for immediate use. With unlimited revisions if adjustments are needed.',
-    },
-    delay: 0.9,
-  },
-];
+import { Send, Bot, Download } from 'lucide-react';
 
 const HowItWorks = () => {
   const { t } = useLanguage();
+
+  const steps = [
+    {
+      icon: Send,
+      num: '01',
+      title: { si: 'Pošljete Navodila', en: 'Send Instructions' },
+      desc: {
+        si: 'Povejte nam, kaj potrebujete – mi poskrbimo za vse ostalo.',
+        en: 'Tell us what you need – we take care of the rest.',
+      },
+      delay: 0.2,
+    },
+    {
+      icon: Bot,
+      num: '02',
+      title: { si: 'AI Ustvarja', en: 'AI Creates' },
+      desc: {
+        si: 'Naša AI tehnologija ustvari vašo vsebino v 24-48 urah.',
+        en: 'Our AI technology creates your content in 24-48 hours.',
+      },
+      delay: 0.4,
+    },
+    {
+      icon: Download,
+      num: '03',
+      title: { si: 'Prejmete Vsebino', en: 'Receive Content' },
+      desc: {
+        si: 'Končne datoteke v visoki ločljivosti, pripravljene za uporabo.',
+        en: 'Final files in high resolution, ready for immediate use.',
+      },
+      delay: 0.6,
+    },
+  ];
 
   return (
     <section className="py-20 md:py-[120px] bg-hero-gradient relative overflow-hidden">
@@ -52,90 +47,57 @@ const HowItWorks = () => {
           className="text-sm text-secondary uppercase tracking-[1.5px] text-center font-medium"
           initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          {t('ENOSTAVNO IN HITRO', 'SIMPLE AND FAST')}
+          {t('KAKO DELUJE', 'HOW IT WORKS')}
         </motion.p>
         <motion.h2
-          className="font-heading font-bold text-3xl md:text-[48px] md:leading-tight text-primary-foreground text-center mt-4 mb-6"
+          className="font-heading font-bold text-3xl md:text-[48px] md:leading-tight text-primary-foreground text-center mt-4 mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.1 }}
         >
-          {t('Kako Deluje Sodelovanje', 'How Collaboration Works')}
+          {t('Tri Enostavne Korake', 'Three Simple Steps')}
         </motion.h2>
-        <motion.p
-          className="text-lg text-hero-muted text-center max-w-[600px] mx-auto mb-16"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          {t('Vaša AI vsebina v treh preprostih korakih', 'Your AI content in three simple steps')}
-        </motion.p>
 
-        {/* Timeline */}
-        <div className="relative">
-          {/* Connecting line - desktop horizontal */}
-          <motion.div
-            className="hidden md:block absolute top-[60px] left-[20%] right-[20%] h-1 rounded-full z-0"
-            style={{ background: 'linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--secondary)))' }}
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.5, delay: 0.5, ease: 'easeInOut' }}
-          />
-          {/* Mobile vertical line */}
-          <motion.div
-            className="md:hidden absolute left-[50px] top-0 bottom-0 w-1 rounded-full z-0"
-            style={{ background: 'linear-gradient(to bottom, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--secondary)))' }}
-            initial={{ scaleY: 0 }}
-            whileInView={{ scaleY: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.5, delay: 0.5 }}
-          />
+        {/* Steps */}
+        <div className="grid md:grid-cols-3 gap-8 md:gap-6">
+          {steps.map((step, i) => (
+            <motion.div
+              key={i}
+              className="relative bg-badge-bg border border-badge-border rounded-2xl p-8 md:p-10 text-center group hover:-translate-y-2 hover:border-primary/50 transition-all duration-300"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: step.delay }}
+            >
+              {/* Number */}
+              <span className="absolute top-6 right-6 font-heading font-bold text-6xl text-primary/10">
+                {step.num}
+              </span>
 
-          <div className="grid md:grid-cols-3 gap-12 relative z-10">
-            {steps.map((step, i) => (
-              <motion.div
-                key={i}
-                className="flex flex-row md:flex-col items-center md:items-center text-left md:text-center gap-6 md:gap-0"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, amount: 0.15 }}
-                transition={{ type: 'spring', stiffness: 200, damping: 15, delay: step.delay }}
-              >
-                {/* Icon */}
-                <motion.span
-                  className="text-[48px] md:mb-4 flex-shrink-0"
-                  animate={{ y: [0, -5, 0] }}
-                  transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-                >
-                  {step.icon}
-                </motion.span>
+              {/* Icon */}
+              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 mx-auto group-hover:bg-primary/20 transition-colors">
+                <step.icon className="w-7 h-7 text-primary" />
+              </div>
 
-                {/* Number Circle */}
-                <div
-                  className={`w-[100px] h-[100px] md:w-[120px] md:h-[120px] rounded-full bg-badge-bg border-4 ${step.borderColor} shadow-[0_10px_40px_rgba(0,0,0,0.3)] flex items-center justify-center md:mb-8 transition-all duration-300 flex-shrink-0`}
-                >
-                  <span className={`font-heading font-bold text-3xl md:text-[40px] ${step.numColor}`}>
-                    {step.num}
-                  </span>
+              <h3 className="font-heading font-bold text-xl text-primary-foreground mb-3">
+                {t(step.title.si, step.title.en)}
+              </h3>
+              <p className="text-hero-muted text-base leading-relaxed">
+                {t(step.desc.si, step.desc.en)}
+              </p>
+
+              {/* Connector arrow on desktop */}
+              {i < 2 && (
+                <div className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 text-primary/30 text-2xl z-20">
+                  →
                 </div>
-
-                <div className="md:max-w-[320px]">
-                  <h3 className="font-heading font-bold text-xl md:text-2xl text-primary-foreground mb-4">
-                    {t(step.title.si, step.title.en)}
-                  </h3>
-                  <p className="text-hero-muted text-base leading-relaxed">
-                    {t(step.desc.si, step.desc.en)}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+              )}
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
