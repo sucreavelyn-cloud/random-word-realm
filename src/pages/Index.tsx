@@ -4,6 +4,7 @@ import ServicesOverview from '@/components/home/ServicesOverview';
 import CaseStudiesPreview from '@/components/home/CaseStudiesPreview';
 import HowItWorks from '@/components/home/HowItWorks';
 import HomeFAQ from '@/components/home/HomeFAQ';
+import StillQuestions from '@/components/home/StillQuestions';
 import FinalCTA from '@/components/home/FinalCTA';
 import Footer from '@/components/Footer';
 
@@ -16,6 +17,7 @@ const Index = () => {
       <CaseStudiesPreview />
       <HowItWorks />
       <HomeFAQ />
+      <StillQuestions />
       <FinalCTA />
       <Footer />
     </main>
