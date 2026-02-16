@@ -28,7 +28,7 @@ type ContactFormData = z.infer<typeof contactSchema>;
 
 const faqItems = [
   { q: { si: 'Koliko stane projekt?', en: 'How much does a project cost?' }, a: { si: 'Cene se začnejo od €149 za osnovni paket. Za natančno ponudbo nas kontaktirajte za brezplačno posvetovanje.', en: 'Prices start from €149 for a basic package. For an exact quote, contact us for a free consultation.' } },
-  { q: { si: 'Kako dolgo traja dostava?', en: 'How long does delivery take?' }, a: { si: 'Večina projektov je končanih v 24-48 urah. Kompleksnejši projekti lahko trajajo do 5 delovnih dni.', en: 'Most projects are completed in 24-48 hours. More complex projects can take up to 5 business days.' } },
+  { q: { si: 'Kako dolgo traja dostava?', en: 'How long does delivery take?' }, a: { si: 'Večina projektov je končanih v 24 urah. Kompleksnejši projekti lahko trajajo do 5 delovnih dni.', en: 'Most projects are completed in 24 hours. More complex projects can take up to 5 business days.' } },
   { q: { si: 'Ali lahko vidim primere vaših del?', en: 'Can I see examples of your work?' }, a: { si: 'Seveda! Oglejte si naš portfolio z več kot 50 uspešno zaključenimi projekti.', en: 'Of course! Check out our portfolio with over 50 successfully completed projects.' } },
   { q: { si: 'Kakšen je postopek naročanja?', en: 'What is the ordering process?' }, a: { si: '1. Brezplačno posvetovanje → 2. Kreativni brief → 3. AI produkcija → 4. Revizije → 5. Dostava. Preprosto!', en: '1. Free consultation → 2. Creative brief → 3. AI production → 4. Revisions → 5. Delivery. Simple!' } },
 ];

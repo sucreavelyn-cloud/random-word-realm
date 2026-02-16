@@ -18,7 +18,7 @@ const tiers = [
       { si: 'Vsi formati (MP4, MOV, WebM)', en: 'All formats (MP4, MOV, WebM)' },
       { si: '2 kroga revizij', en: '2 rounds of revisions' },
       { si: 'Glasba in voiceover', en: 'Music and voiceover' },
-      { si: 'Dostava v 24-48h', en: 'Delivery in 24-48h' },
+      { si: 'Dostava v 24h', en: 'Delivery in 24h' },
     ],
     cta: { si: 'Izberi Video Paket', en: 'Choose Video Package' },
     gradient: 'from-primary/10 to-primary/5',
