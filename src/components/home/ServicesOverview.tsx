@@ -22,7 +22,7 @@ const services = [
       { si: 'AI voiceover v slovenščini', en: 'AI voiceover in Slovenian' },
     ],
     cta: { si: 'Več o Video Storitvah →', en: 'More About Video Services →' },
-    link: '/storitve/video',
+    link: '/ai-video-oglasi',
     price: '€299',
   },
   {
@@ -43,7 +43,7 @@ const services = [
       { si: 'Kreativni product placement', en: 'Creative product placement' },
     ],
     cta: { si: 'Več o Fotografiji →', en: 'More About Photography →' },
-    link: '/storitve/fotografija',
+    link: '/ai-produktna-fotografija',
     price: '€149',
   },
 ];

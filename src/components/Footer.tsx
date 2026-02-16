@@ -40,7 +40,7 @@ const Footer = () => {
           <div>
             <h4 className="font-heading font-semibold text-sm text-primary-foreground mb-4">{t('Podjetje', 'Company')}</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/o-nas" className="text-hero-muted hover:text-primary-foreground transition-colors">{t('O Nas', 'About')}</Link></li>
+              
               <li><Link to="/portfolio" className="text-hero-muted hover:text-primary-foreground transition-colors">Portfolio</Link></li>
               <li><Link to="/blog" className="text-hero-muted hover:text-primary-foreground transition-colors">Blog</Link></li>
               <li><Link to="/kontakt" className="text-hero-muted hover:text-primary-foreground transition-colors">{t('Kontakt', 'Contact')}</Link></li>
