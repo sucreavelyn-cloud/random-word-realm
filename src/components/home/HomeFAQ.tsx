@@ -57,24 +57,7 @@ const HomeFAQ = () => {
         >
           {t('POGOSTA VPRAŠANJA', 'FREQUENTLY ASKED QUESTIONS')}
         </motion.p>
-        <motion.h2
-          className="font-heading font-bold text-3xl md:text-[48px] md:leading-tight text-primary-foreground text-center mt-4 mb-6"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-        >
-          {t('Imate Vprašanja?', 'Have Questions?')}
-        </motion.h2>
-        <motion.p
-          className="text-lg text-hero-muted text-center max-w-[600px] mx-auto mb-16"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          {t('Tu so odgovori na najpogostejša vprašanja', 'Here are answers to the most common questions')}
-        </motion.p>
+        <div className="mb-16" />
 
         {/* Accordion */}
         <div className="flex flex-col gap-4">
