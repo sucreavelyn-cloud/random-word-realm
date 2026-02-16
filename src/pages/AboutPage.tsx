@@ -7,7 +7,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const ease = [0.4, 0, 0.2, 1] as [number, number, number, number];
 
 const values = [
-  { icon: '⚡', title: { si: 'Hitrost', en: 'Speed' }, desc: { si: 'Dostava v 24-48 urah. Hitro, učinkovito, brez čakanja.', en: 'Delivery in 24-48 hours. Fast, efficient, no waiting.' } },
+  { icon: '⚡', title: { si: 'Hitrost', en: 'Speed' }, desc: { si: 'Dostava v 24 urah. Hitro, učinkovito, brez čakanja.', en: 'Delivery in 24 hours. Fast, efficient, no waiting.' } },
   { icon: '✨', title: { si: 'Kakovost', en: 'Quality' }, desc: { si: 'Profesionalna kakovost, ki presega pričakovanja.', en: 'Professional quality that exceeds expectations.' } },
   { icon: '🔍', title: { si: 'Transparentnost', en: 'Transparency' }, desc: { si: 'Jasne cene, brez skritih stroškov, odprta komunikacija.', en: 'Clear pricing, no hidden costs, open communication.' } },
   { icon: '🚀', title: { si: 'Inovativnost', en: 'Innovation' }, desc: { si: 'Najnovejše AI tehnologije za najboljše rezultate.', en: 'Latest AI technologies for the best results.' } },

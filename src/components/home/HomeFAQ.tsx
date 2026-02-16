@@ -10,7 +10,7 @@ const faqItems = [
   },
   {
     q: { si: 'Kako dolgo traja dostava?', en: 'How long does delivery take?' },
-    a: { si: 'Standardna dostava je 24-48 ur od potrditve projekta. Za kompleksnejše projekte ali večje količine vsebine se rok lahko podaljša na 3-5 dni. Vedno vas obvestimo o točnem roku pred začetkom dela.', en: 'Standard delivery is 24-48 hours from project confirmation. For more complex projects or larger volumes, the deadline may extend to 3-5 days. We always inform you of the exact timeline before starting.' },
+    a: { si: 'Standardna dostava je 24 ur od potrditve projekta. Za kompleksnejše projekte ali večje količine vsebine se rok lahko podaljša na 3-5 dni. Vedno vas obvestimo o točnem roku pred začetkom dela.', en: 'Standard delivery is 24 hours from project confirmation. For more complex projects or larger volumes, the deadline may extend to 3-5 days. We always inform you of the exact timeline before starting.' },
   },
   {
     q: { si: 'Ali lahko vidim primere vašega dela?', en: 'Can I see examples of your work?' },

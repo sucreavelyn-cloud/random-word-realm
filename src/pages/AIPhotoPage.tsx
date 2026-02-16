@@ -102,7 +102,7 @@ const AIPhotoPage = () => {
       <ServiceHero
         eyebrow={{ si: 'AI Produktna Fotografija', en: 'AI Product Photography' }}
         title={{ si: 'AI Fotografija, Ki Prodaja Vaše Produkte', en: 'AI Photography That Sells Your Products' }}
-        subtitle={{ si: 'Fotorealistična produktna fotografija z AI. Odstranjevanje ozadja, lifestyle scene in več – vse v 24-48 urah.', en: 'Photorealistic product photography with AI. Background removal, lifestyle scenes and more – all in 24-48 hours.' }}
+        subtitle={{ si: 'Fotorealistična produktna fotografija z AI. Odstranjevanje ozadja, lifestyle scene in več – vse v 24 urah.', en: 'Photorealistic product photography with AI. Background removal, lifestyle scenes and more – all in 24 hours.' }}
         gradient="orange"
       />
       <GalleryGrid />

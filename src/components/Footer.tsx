@@ -53,7 +53,7 @@ const Footer = () => {
             <ul className="space-y-2 text-sm text-hero-muted">
               <li>📧 info@aioglasi.si</li>
               <li>📱 +386 1 234 5678</li>
-              <li>📍 Ljubljana, Slovenija</li>
+              <li>📍 Škofja Loka, Slovenija</li>
             </ul>
             <div className="flex gap-3 mt-4">
               {['LinkedIn', 'Instagram', 'Facebook'].map((s) => (

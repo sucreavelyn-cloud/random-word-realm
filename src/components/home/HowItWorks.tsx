@@ -21,8 +21,8 @@ const HowItWorks = () => {
       num: '02',
       title: { si: 'AI Ustvarja', en: 'AI Creates' },
       desc: {
-        si: 'Naša AI tehnologija ustvari vašo vsebino v 24-48 urah.',
-        en: 'Our AI technology creates your content in 24-48 hours.',
+        si: 'Naša AI tehnologija ustvari vašo vsebino v 24 urah.',
+        en: 'Our AI technology creates your content in 24 hours.',
       },
       delay: 0.4,
     },

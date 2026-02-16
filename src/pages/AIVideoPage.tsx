@@ -50,7 +50,7 @@ const videoProcess = [
 ];
 
 const videoFAQ = [
-  { question: { si: 'Koliko časa traja produkcija videa?', en: 'How long does video production take?' }, answer: { si: 'Večina projektov je končanih v 24-48 urah. Kompleksnejši projekti lahko trajajo do 5 dni.', en: 'Most projects are completed in 24-48 hours. More complex projects can take up to 5 days.' } },
+  { question: { si: 'Koliko časa traja produkcija videa?', en: 'How long does video production take?' }, answer: { si: 'Večina projektov je končanih v 24 urah. Kompleksnejši projekti lahko trajajo do 5 dni.', en: 'Most projects are completed in 24 hours. More complex projects can take up to 5 days.' } },
   { question: { si: 'Ali lahko prilagodim barve in stil?', en: 'Can I customize colors and style?' }, answer: { si: 'Seveda! Vsi videi so popolnoma prilagodljivi - barve, tipografija, glasba, voiceover in več.', en: 'Absolutely! All videos are fully customizable - colors, typography, music, voiceover and more.' } },
   { question: { si: 'Kakšne formate podpirate?', en: 'What formats do you support?' }, answer: { si: 'Podpiramo MP4, MOV, WebM v resolucijah do 4K UHD, v razmerjih 16:9, 9:16, 1:1 in 4:5.', en: 'We support MP4, MOV, WebM in resolutions up to 4K UHD, in 16:9, 9:16, 1:1 and 4:5 ratios.' } },
   { question: { si: 'Koliko revizij je vključenih?', en: 'How many revisions are included?' }, answer: { si: 'Vsak paket vključuje 2 kroga revizij. Dodatne revizije so na voljo po dogovoru.', en: 'Each package includes 2 rounds of revisions. Additional revisions are available upon agreement.' } },
@@ -103,7 +103,7 @@ const AIVideoPage = () => {
       <ServiceHero
         eyebrow={{ si: 'AI Video Produkcija', en: 'AI Video Production' }}
         title={{ si: 'AI Video Oglasi, Ki Prodajajo', en: 'AI Video Ads That Sell' }}
-        subtitle={{ si: 'Profesionalni AI video oglasi za socialna omrežja, produkte in blagovne znamke. Dostava v 24-48 urah.', en: 'Professional AI video ads for social media, products and brands. Delivery in 24-48 hours.' }}
+        subtitle={{ si: 'Profesionalni AI video oglasi za socialna omrežja, produkte in blagovne znamke. Dostava v 24 urah.', en: 'Professional AI video ads for social media, products and brands. Delivery in 24 hours.' }}
         gradient="blue"
       />
       <VideoShowcase />
