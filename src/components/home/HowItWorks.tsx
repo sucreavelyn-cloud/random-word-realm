@@ -7,7 +7,6 @@ const steps = [
     icon: '📝',
     borderColor: 'border-primary',
     numColor: 'text-primary',
-    hoverRing: 'hover:shadow-[0_0_0_8px_rgba(59,130,246,0.2)]',
     title: { si: 'Pošljete Navodila', en: 'Send Instructions' },
     desc: {
       si: 'Izpolnite kratek vprašalnik ali nam pošljite e-mail z opisom projekta. Povejte nam, kaj potrebujete – mi poskrbimo za vse ostalo.',
@@ -20,7 +19,6 @@ const steps = [
     icon: '🤖',
     borderColor: 'border-secondary',
     numColor: 'text-secondary',
-    hoverRing: 'hover:shadow-[0_0_0_8px_rgba(249,115,22,0.2)]',
     title: { si: 'AI Ustvarja', en: 'AI Creates' },
     desc: {
       si: 'Naša napredna AI tehnologija ustvari vašo vsebino v 24-48 urah. Brez dolgih čakalnih vrst, brez odvisnosti od fotografov ali video ekip.',
@@ -33,7 +31,6 @@ const steps = [
     icon: '✨',
     borderColor: 'border-accent',
     numColor: 'text-accent',
-    hoverRing: 'hover:shadow-[0_0_0_8px_rgba(139,92,246,0.2)]',
     title: { si: 'Prejmete Vsebino', en: 'Receive Content' },
     desc: {
       si: 'Prejemate končne datoteke v visoki ločljivosti, pripravljene za takojšnjo uporabo. Z neomejeno revizijo, če je potrebno kaj prilagoditi.',
@@ -47,11 +44,12 @@ const HowItWorks = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="py-20 md:py-[120px] bg-muted">
-      <div className="container mx-auto px-6 max-w-[1280px]">
+    <section className="py-20 md:py-[120px] bg-hero-gradient relative overflow-hidden">
+      <div className="absolute inset-0 grain-overlay animate-grain pointer-events-none" />
+      <div className="container mx-auto px-6 max-w-[1280px] relative z-10">
         {/* Header */}
         <motion.p
-          className="text-sm text-secondary uppercase tracking-[1.5px] text-center font-semibold"
+          className="text-sm text-secondary uppercase tracking-[1.5px] text-center font-medium"
           initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -60,7 +58,7 @@ const HowItWorks = () => {
           {t('ENOSTAVNO IN HITRO', 'SIMPLE AND FAST')}
         </motion.p>
         <motion.h2
-          className="font-heading font-bold text-3xl md:text-[48px] md:leading-tight text-foreground text-center mt-4 mb-6"
+          className="font-heading font-bold text-3xl md:text-[48px] md:leading-tight text-primary-foreground text-center mt-4 mb-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -69,7 +67,7 @@ const HowItWorks = () => {
           {t('Kako Deluje Sodelovanje', 'How Collaboration Works')}
         </motion.h2>
         <motion.p
-          className="text-lg text-muted-foreground text-center max-w-[600px] mx-auto mb-16"
+          className="text-lg text-hero-muted text-center max-w-[600px] mx-auto mb-16"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -120,7 +118,7 @@ const HowItWorks = () => {
 
                 {/* Number Circle */}
                 <div
-                  className={`w-[100px] h-[100px] md:w-[120px] md:h-[120px] rounded-full bg-white border-4 ${step.borderColor} shadow-[0_10px_40px_rgba(0,0,0,0.1)] flex items-center justify-center md:mb-8 transition-all duration-300 ${step.hoverRing} flex-shrink-0`}
+                  className={`w-[100px] h-[100px] md:w-[120px] md:h-[120px] rounded-full bg-badge-bg border-4 ${step.borderColor} shadow-[0_10px_40px_rgba(0,0,0,0.3)] flex items-center justify-center md:mb-8 transition-all duration-300 flex-shrink-0`}
                 >
                   <span className={`font-heading font-bold text-3xl md:text-[40px] ${step.numColor}`}>
                     {step.num}
@@ -128,10 +126,10 @@ const HowItWorks = () => {
                 </div>
 
                 <div className="md:max-w-[320px]">
-                  <h3 className="font-heading font-bold text-xl md:text-2xl text-foreground mb-4">
+                  <h3 className="font-heading font-bold text-xl md:text-2xl text-primary-foreground mb-4">
                     {t(step.title.si, step.title.en)}
                   </h3>
-                  <p className="text-muted-foreground text-base leading-relaxed">
+                  <p className="text-hero-muted text-base leading-relaxed">
                     {t(step.desc.si, step.desc.en)}
                   </p>
                 </div>

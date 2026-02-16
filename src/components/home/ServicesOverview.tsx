@@ -6,11 +6,10 @@ import { Film, Camera, Check } from 'lucide-react';
 const services = [
   {
     icon: Film,
-    gradient: 'from-blue-50 to-blue-100',
-    borderColor: 'border-primary',
-    iconBg: 'bg-white shadow-[0_10px_30px_rgba(59,130,246,0.2)]',
+    borderColor: 'border-primary/40',
+    iconBg: 'bg-primary/20',
     checkColor: 'text-primary',
-    btnBg: 'bg-primary hover:shadow-[0_10px_30px_rgba(59,130,246,0.3)]',
+    btnBg: 'bg-primary hover:shadow-glow-primary',
     title: { si: 'AI Video Oglasi & Socialna Vsebina', en: 'AI Video Ads & Social Content' },
     description: {
       si: 'Profesionalni video oglasi za social media, YouTube in spletne kampanje. Od kratkih reels do dolgih promocijskih videov – vse ustvarjeno z AI v rekordnem času.',
@@ -28,11 +27,10 @@ const services = [
   },
   {
     icon: Camera,
-    gradient: 'from-amber-50 to-amber-100',
-    borderColor: 'border-secondary',
-    iconBg: 'bg-white shadow-[0_10px_30px_rgba(249,115,22,0.2)]',
+    borderColor: 'border-secondary/40',
+    iconBg: 'bg-secondary/20',
     checkColor: 'text-secondary',
-    btnBg: 'bg-secondary hover:shadow-[0_10px_30px_rgba(249,115,22,0.3)]',
+    btnBg: 'bg-secondary hover:shadow-glow-secondary',
     title: { si: 'AI Produktna Fotografija & Marketing Slike', en: 'AI Product Photography & Marketing Images' },
     description: {
       si: 'Spremenite osnovne produktne fotografije v profesionalne marketing materiale. Perfektna osvetlitev, ozadja in stilizacija – brez fotografskega studia.',
@@ -54,11 +52,12 @@ const ServicesOverview = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="py-20 md:py-[120px] bg-white">
-      <div className="container mx-auto px-6 max-w-[1280px]">
+    <section className="py-20 md:py-[120px] bg-hero-gradient relative overflow-hidden">
+      <div className="absolute inset-0 grain-overlay animate-grain pointer-events-none" />
+      <div className="container mx-auto px-6 max-w-[1280px] relative z-10">
         {/* Header */}
         <motion.p
-          className="text-sm text-secondary uppercase tracking-[1.5px] text-center font-semibold"
+          className="text-sm text-secondary uppercase tracking-[1.5px] text-center font-medium"
           initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -67,7 +66,7 @@ const ServicesOverview = () => {
           {t('NAŠE STORITVE', 'OUR SERVICES')}
         </motion.p>
         <motion.h2
-          className="font-heading font-bold text-3xl md:text-[48px] md:leading-tight text-foreground text-center mt-4 mb-6"
+          className="font-heading font-bold text-3xl md:text-[48px] md:leading-tight text-primary-foreground text-center mt-4 mb-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -76,7 +75,7 @@ const ServicesOverview = () => {
           {t('Kaj Lahko Ustvarimo za Vas?', 'What Can We Create for You?')}
         </motion.h2>
         <motion.p
-          className="text-lg text-muted-foreground text-center max-w-[600px] mx-auto mb-16"
+          className="text-lg text-hero-muted text-center max-w-[600px] mx-auto mb-16"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -90,7 +89,7 @@ const ServicesOverview = () => {
           {services.map((service, idx) => (
             <motion.div
               key={idx}
-              className={`relative bg-gradient-to-br ${service.gradient} border-2 ${service.borderColor} rounded-3xl p-8 md:p-12 min-h-[480px] flex flex-col group`}
+              className={`relative bg-badge-bg border ${service.borderColor} rounded-3xl p-8 md:p-12 min-h-[480px] flex flex-col group`}
               initial={{ opacity: 0, y: 60, rotateX: 10 }}
               whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
               viewport={{ once: true, amount: 0.15 }}
@@ -106,12 +105,12 @@ const ServicesOverview = () => {
                 transition={{ type: 'spring', delay: 0.4 + idx * 0.2 }}
                 whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
               >
-                <service.icon className="w-10 h-10 text-foreground" />
+                <service.icon className={`w-10 h-10 ${service.checkColor}`} />
               </motion.div>
 
               {/* Title */}
               <motion.h3
-                className="font-heading font-bold text-2xl md:text-[32px] text-foreground mb-4 leading-tight"
+                className="font-heading font-bold text-2xl md:text-[32px] text-primary-foreground mb-4 leading-tight"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -122,7 +121,7 @@ const ServicesOverview = () => {
 
               {/* Description */}
               <motion.p
-                className="text-muted-foreground text-[17px] leading-[1.7] mb-6"
+                className="text-hero-muted text-[17px] leading-[1.7] mb-6"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
@@ -136,7 +135,7 @@ const ServicesOverview = () => {
                 {service.features.map((f, fi) => (
                   <motion.li
                     key={fi}
-                    className="flex items-start gap-2 text-[15px] text-muted-foreground"
+                    className="flex items-start gap-2 text-[15px] text-hero-muted"
                     initial={{ opacity: 0, x: -15 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
@@ -165,7 +164,7 @@ const ServicesOverview = () => {
 
               {/* Price Badge */}
               <motion.span
-                className="absolute bottom-6 right-6 bg-white/90 px-4 py-2 rounded-[20px] text-[13px] font-semibold text-primary"
+                className="absolute bottom-6 right-6 bg-badge-bg px-4 py-2 rounded-full text-[13px] font-semibold text-primary border border-badge-border"
                 initial={{ opacity: 0, x: 20, y: 20 }}
                 whileInView={{ opacity: 1, x: 0, y: 0 }}
                 viewport={{ once: true }}
