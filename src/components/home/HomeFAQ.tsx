@@ -1,4 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
@@ -119,6 +120,25 @@ const HomeFAQ = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Still questions CTA */}
+        <motion.div
+          className="text-center mt-16"
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <p className="text-lg text-hero-muted mb-6">
+            {t('Imate še vedno vprašanja? Tu smo, da vam pomagamo.', 'Still have questions? We\'re here to help.')}
+          </p>
+          <Link
+            to="/kontakt"
+            className="inline-flex items-center justify-center h-14 px-10 text-base font-semibold rounded-xl bg-primary text-primary-foreground shadow-glow-primary transition-all duration-300 hover:scale-105 hover:-translate-y-1"
+          >
+            {t('_REZERVIRAJ KLIC', '_BOOK A CALL')}
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
