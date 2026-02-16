@@ -1,21 +1,16 @@
-import { useMemo } from "react";
-
-const words = [
-  "ephemeral", "solitude", "cascade", "whisper", "labyrinth",
-  "aurora", "reverie", "obsidian", "serendipity", "velvet",
-  "phantom", "mosaic", "enigma", "horizon", "ember",
-  "nebula", "echo", "drift", "fracture", "silhouette",
-];
+import Header from '@/components/Header';
+import HeroSection from '@/components/HeroSection';
+import Footer from '@/components/Footer';
 
 const Index = () => {
-  const word = useMemo(() => words[Math.floor(Math.random() * words.length)], []);
-
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <span className="text-5xl font-light tracking-widest text-foreground lowercase">
-        {word}
-      </span>
-    </div>
+    <main className="bg-background">
+      <Header />
+      <HeroSection />
+      {/* More sections will be added here */}
+      <div className="h-screen bg-hero-gradient" />
+      <Footer />
+    </main>
   );
 };
 
