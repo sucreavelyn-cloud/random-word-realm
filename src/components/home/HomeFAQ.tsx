@@ -43,11 +43,12 @@ const HomeFAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-20 md:py-[120px] bg-white">
-      <div className="container mx-auto px-6 max-w-[900px]">
+    <section className="py-20 md:py-[120px] bg-hero-gradient relative overflow-hidden">
+      <div className="absolute inset-0 grain-overlay animate-grain pointer-events-none" />
+      <div className="container mx-auto px-6 max-w-[900px] relative z-10">
         {/* Header */}
         <motion.p
-          className="text-sm text-secondary uppercase tracking-[1.5px] text-center font-semibold"
+          className="text-sm text-secondary uppercase tracking-[1.5px] text-center font-medium"
           initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -56,7 +57,7 @@ const HomeFAQ = () => {
           {t('POGOSTA VPRAŠANJA', 'FREQUENTLY ASKED QUESTIONS')}
         </motion.p>
         <motion.h2
-          className="font-heading font-bold text-3xl md:text-[48px] md:leading-tight text-foreground text-center mt-4 mb-6"
+          className="font-heading font-bold text-3xl md:text-[48px] md:leading-tight text-primary-foreground text-center mt-4 mb-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -65,7 +66,7 @@ const HomeFAQ = () => {
           {t('Imate Vprašanja?', 'Have Questions?')}
         </motion.h2>
         <motion.p
-          className="text-lg text-muted-foreground text-center max-w-[600px] mx-auto mb-16"
+          className="text-lg text-hero-muted text-center max-w-[600px] mx-auto mb-16"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -79,7 +80,7 @@ const HomeFAQ = () => {
           {faqItems.map((item, i) => (
             <motion.div
               key={i}
-              className={`border-2 rounded-2xl overflow-hidden transition-colors ${openIndex === i ? 'border-primary' : 'border-border'}`}
+              className={`border rounded-2xl overflow-hidden transition-colors ${openIndex === i ? 'border-primary/50' : 'border-badge-border'} bg-badge-bg`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -87,10 +88,10 @@ const HomeFAQ = () => {
             >
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className="w-full flex items-center justify-between py-6 px-8 text-left hover:bg-muted/50 transition-colors cursor-pointer"
+                className="w-full flex items-center justify-between py-6 px-8 text-left hover:bg-badge-bg/80 transition-colors cursor-pointer"
                 aria-expanded={openIndex === i}
               >
-                <span className="font-semibold text-lg text-foreground pr-6">
+                <span className="font-semibold text-lg text-primary-foreground pr-6">
                   {t(item.q.si, item.q.en)}
                 </span>
                 <motion.div
@@ -109,7 +110,7 @@ const HomeFAQ = () => {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <p className="px-8 pb-6 text-muted-foreground text-base leading-[1.7]">
+                    <p className="px-8 pb-6 text-hero-muted text-base leading-[1.7]">
                       {t(item.a.si, item.a.en)}
                     </p>
                   </motion.div>

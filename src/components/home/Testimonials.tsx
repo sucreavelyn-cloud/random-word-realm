@@ -81,11 +81,12 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section className="py-20 md:py-[120px] bg-white">
-      <div className="container mx-auto px-6 max-w-[1280px]">
+    <section className="py-20 md:py-[120px] bg-hero-gradient relative overflow-hidden">
+      <div className="absolute inset-0 grain-overlay animate-grain pointer-events-none" />
+      <div className="container mx-auto px-6 max-w-[1280px] relative z-10">
         {/* Header */}
         <motion.p
-          className="text-sm text-secondary uppercase tracking-[1.5px] text-center font-semibold"
+          className="text-sm text-secondary uppercase tracking-[1.5px] text-center font-medium"
           initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -94,7 +95,7 @@ const Testimonials = () => {
           {t('ZADOVOLJNE STRANKE', 'HAPPY CLIENTS')}
         </motion.p>
         <motion.h2
-          className="font-heading font-bold text-3xl md:text-[48px] md:leading-tight text-foreground text-center mt-4 mb-6"
+          className="font-heading font-bold text-3xl md:text-[48px] md:leading-tight text-primary-foreground text-center mt-4 mb-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -103,7 +104,7 @@ const Testimonials = () => {
           {t('Zaupajo Nam Vodilna Slovenska Podjetja', 'Leading Slovenian Companies Trust Us')}
         </motion.h2>
         <motion.p
-          className="text-lg text-muted-foreground text-center max-w-[600px] mx-auto mb-16"
+          className="text-lg text-hero-muted text-center max-w-[600px] mx-auto mb-16"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -132,7 +133,7 @@ const Testimonials = () => {
               <div className="font-heading font-bold text-4xl md:text-[56px] text-gradient-brand">
                 <CountUp end={stat.numericEnd} suffix={stat.value.replace(/\d+/, '')} />
               </div>
-              <p className="text-muted-foreground text-base mt-2">{t(stat.label.si, stat.label.en)}</p>
+              <p className="text-hero-muted text-base mt-2">{t(stat.label.si, stat.label.en)}</p>
             </motion.div>
           ))}
         </motion.div>
@@ -144,23 +145,23 @@ const Testimonials = () => {
             {testimonials.map((item, i) => (
               <motion.div
                 key={i}
-                className="bg-white border border-border rounded-[20px] p-10 h-[320px] flex flex-col transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-lg hover:border-primary"
+                className="bg-badge-bg border border-badge-border rounded-[20px] p-10 h-[320px] flex flex-col transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-lg hover:border-primary/50"
                 initial={{ opacity: 0, x: 60 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: 0.5 + i * 0.15 }}
               >
                 <span className="text-[48px] text-primary/20 leading-none mb-6 font-serif">"</span>
-                <p className="text-foreground text-[17px] leading-[1.7] mb-8 flex-1">
+                <p className="text-hero-muted text-[17px] leading-[1.7] mb-8 flex-1">
                   {t(item.quote.si, item.quote.en)}
                 </p>
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white text-xl font-bold">
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground text-xl font-bold">
                     {item.initial}
                   </div>
                   <div>
-                    <p className="font-semibold text-foreground">{item.name}</p>
-                    <p className="text-sm text-muted-foreground">{t(item.role.si, item.role.en)}</p>
+                    <p className="font-semibold text-primary-foreground">{item.name}</p>
+                    <p className="text-sm text-hero-muted">{t(item.role.si, item.role.en)}</p>
                   </div>
                 </div>
               </motion.div>
@@ -177,18 +178,18 @@ const Testimonials = () => {
               >
                 {testimonials.map((item, i) => (
                   <div key={i} className="min-w-full px-2">
-                    <div className="bg-white border border-border rounded-[20px] p-8 h-[320px] flex flex-col">
+                    <div className="bg-badge-bg border border-badge-border rounded-[20px] p-8 h-[320px] flex flex-col">
                       <span className="text-[48px] text-primary/20 leading-none mb-4 font-serif">"</span>
-                      <p className="text-foreground text-base leading-[1.7] mb-6 flex-1">
+                      <p className="text-hero-muted text-base leading-[1.7] mb-6 flex-1">
                         {t(item.quote.si, item.quote.en)}
                       </p>
                       <div className="flex items-center gap-3">
-                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white text-lg font-bold">
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground text-lg font-bold">
                           {item.initial}
                         </div>
                         <div>
-                          <p className="font-semibold text-foreground text-sm">{item.name}</p>
-                          <p className="text-xs text-muted-foreground">{t(item.role.si, item.role.en)}</p>
+                          <p className="font-semibold text-primary-foreground text-sm">{item.name}</p>
+                          <p className="text-xs text-hero-muted">{t(item.role.si, item.role.en)}</p>
                         </div>
                       </div>
                     </div>
@@ -202,7 +203,7 @@ const Testimonials = () => {
                 <button
                   key={i}
                   onClick={() => setActiveSlide(i)}
-                  className={`w-2.5 h-2.5 rounded-full transition-all ${i === activeSlide ? 'bg-primary w-6' : 'bg-border'}`}
+                  className={`w-2.5 h-2.5 rounded-full transition-all ${i === activeSlide ? 'bg-primary w-6' : 'bg-badge-border'}`}
                 />
               ))}
             </div>
