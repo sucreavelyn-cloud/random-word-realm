@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Check, ArrowRight } from 'lucide-react';
+import { Check } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -21,6 +21,8 @@ const tiers = [
       { si: 'Dostava v 24h', en: 'Delivery in 24h' },
     ],
     cta: { si: 'Izberi Video Paket', en: 'Choose Video Package' },
+    gradient: 'from-primary/10 to-primary/5',
+    border: 'border-primary/20',
   },
   {
     name: { si: 'Fotografija Paket', en: 'Photography Package' },
@@ -36,6 +38,8 @@ const tiers = [
       { si: 'Dostava v 24h', en: 'Delivery in 24h' },
     ],
     cta: { si: 'Izberi Foto Paket', en: 'Choose Photo Package' },
+    gradient: 'from-secondary/10 to-secondary/5',
+    border: 'border-secondary/40',
   },
   {
     name: { si: 'Custom / Enterprise', en: 'Custom / Enterprise' },
@@ -50,6 +54,8 @@ const tiers = [
       { si: 'SLA garancije', en: 'SLA guarantees' },
     ],
     cta: { si: 'Rezerviraj Klic', en: 'Book a Call' },
+    gradient: 'from-accent/10 to-accent/5',
+    border: 'border-accent/20',
   },
 ];
 
@@ -60,63 +66,46 @@ const PricingPage = () => {
     <main className="bg-background">
       <Header />
 
-      <section className="pt-36 pb-20 bg-mesh-gradient relative overflow-hidden">
-        <div className="absolute inset-0 grain-overlay animate-grain pointer-events-none" />
-        <div className="container mx-auto px-4 md:px-6 text-center relative z-10">
-          <motion.p
-            className="text-[11px] uppercase tracking-[3px] text-primary font-semibold mb-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, ease }}
-          >
-            {t('Cenik', 'Pricing')}
-          </motion.p>
+      <section className="pt-32 pb-16 bg-hero-gradient">
+        <div className="container mx-auto px-4 md:px-6 text-center">
           <motion.h1
-            className="font-heading font-extrabold text-4xl md:text-[64px] leading-[0.95] tracking-tight text-primary-foreground mb-6"
+            className="font-heading font-bold text-3xl md:text-5xl text-primary-foreground mb-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease }}
           >
-            {t('Transparentne Cene', 'Transparent Pricing')}
+            {t('Pregledne Cene, Brez Presenečenj', 'Transparent Pricing, No Surprises')}
           </motion.h1>
-          <motion.p
-            className="text-lg text-hero-muted max-w-xl mx-auto"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.6, ease }}
-          >
-            {t('Brez skritih stroškov. Brez presenečenj. Samo rezultati.', 'No hidden costs. No surprises. Just results.')}
+          <motion.p className="text-lg text-hero-muted max-w-xl mx-auto" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2, duration: 0.6, ease }}>
+            {t('Izberite paket, ki ustreza vašim potrebam. Vsi paketi vključujejo brezplačno posvetovanje.', 'Choose a package that fits your needs. All packages include a free consultation.')}
           </motion.p>
         </div>
       </section>
 
-      <section className="py-24">
+      <section className="py-20">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {tiers.map((tier, i) => (
               <motion.div
                 key={i}
-                className={`relative rounded-2xl p-8 border hover-lift ${
-                  tier.highlighted
-                    ? 'bg-primary/5 border-primary/40 ring-1 ring-primary/20'
-                    : 'bg-card border-border'
-                }`}
+                className={`relative rounded-3xl p-8 bg-gradient-to-b ${tier.gradient} border ${tier.border} ${tier.highlighted ? 'ring-2 ring-secondary shadow-glow-secondary' : ''}`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.12, ease }}
+                transition={{ duration: 0.6, delay: i * 0.15, ease }}
+                whileHover={{ y: -5 }}
               >
                 {tier.highlighted && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 text-[10px] uppercase tracking-[1.5px] font-bold rounded-full bg-primary text-primary-foreground">
-                    {t('Popularno', 'Popular')}
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 text-xs font-bold rounded-full bg-secondary text-secondary-foreground">
+                    {t('Najpopularnejše', 'Most Popular')}
                   </span>
                 )}
-                <h3 className="font-heading font-bold text-xl text-foreground mb-1 tracking-tight">{t(tier.name.si, tier.name.en)}</h3>
+                <h3 className="font-heading font-bold text-xl text-foreground mb-1">{t(tier.name.si, tier.name.en)}</h3>
                 <p className="text-sm text-muted-foreground mb-4">{t(tier.description.si, tier.description.en)}</p>
-                <div className="font-heading font-extrabold text-4xl text-foreground mb-8 tracking-tight">{t(tier.price.si, tier.price.en)}</div>
+                <div className="font-heading font-bold text-3xl text-foreground mb-6">{t(tier.price.si, tier.price.en)}</div>
                 <ul className="space-y-3 mb-8">
                   {tier.features.map((f, fi) => (
-                    <li key={fi} className="flex items-start gap-3 text-sm text-muted-foreground">
+                    <li key={fi} className="flex items-start gap-2 text-sm text-muted-foreground">
                       <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                       {t(f.si, f.en)}
                     </li>
@@ -124,14 +113,13 @@ const PricingPage = () => {
                 </ul>
                 <Link
                   to="/kontakt"
-                  className={`group w-full flex items-center justify-center gap-2 py-3.5 rounded-full font-semibold text-sm uppercase tracking-[0.5px] transition-all duration-300 ${
+                  className={`block w-full text-center py-3 rounded-xl font-semibold text-sm transition-all ${
                     tier.highlighted
-                      ? 'bg-primary text-primary-foreground shadow-glow-primary hover:gap-3'
-                      : 'bg-muted text-foreground hover:bg-muted/80'
+                      ? 'bg-secondary text-secondary-foreground hover:shadow-glow-secondary'
+                      : 'bg-primary text-primary-foreground hover:shadow-glow-primary'
                   }`}
                 >
                   {t(tier.cta.si, tier.cta.en)}
-                  <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </motion.div>
             ))}

@@ -4,7 +4,6 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { blogPosts } from '@/data/blog';
-import { ArrowRight } from 'lucide-react';
 
 const ease = [0.4, 0, 0.2, 1] as [number, number, number, number];
 
@@ -17,7 +16,7 @@ const BlogPostPage = () => {
     return (
       <main className="bg-background min-h-screen">
         <Header />
-        <div className="pt-36 text-center">
+        <div className="pt-32 text-center">
           <p className="text-muted-foreground">{t('Objava ni najdena.', 'Post not found.')}</p>
           <Link to="/blog" className="text-primary underline mt-4 inline-block">{t('Nazaj na blog', 'Back to blog')}</Link>
         </div>
@@ -32,44 +31,44 @@ const BlogPostPage = () => {
     <main className="bg-background">
       <Header />
 
-      {/* Hero image */}
+      {/* Featured image */}
       <section className="pt-24">
-        <div className="w-full h-64 md:h-[420px] overflow-hidden">
+        <div className="w-full h-64 md:h-96 overflow-hidden">
           <img src={post.heroImage} alt={t(post.title.si, post.title.en)} className="w-full h-full object-cover" />
         </div>
       </section>
 
       <article className="container mx-auto px-4 md:px-6 max-w-3xl -mt-16 relative z-10">
         <motion.div
-          className="bg-card rounded-3xl border border-border p-8 md:p-14 shadow-xl"
+          className="bg-card rounded-3xl border border-border p-8 md:p-12 shadow-lg"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease }}
         >
           {/* Meta */}
-          <div className="flex flex-wrap items-center gap-3 mb-8 text-[11px] uppercase tracking-[1.5px] text-muted-foreground">
-            <Link to="/blog" className="hover:text-primary transition-colors">← Blog</Link>
-            <span className="w-1 h-1 rounded-full bg-muted-foreground" />
-            <span className="text-primary font-semibold">{t(post.categoryLabel.si, post.categoryLabel.en)}</span>
-            <span className="w-1 h-1 rounded-full bg-muted-foreground" />
+          <div className="flex flex-wrap items-center gap-3 mb-6 text-sm text-muted-foreground">
+            <Link to="/blog" className="hover:text-primary transition-colors">← {t('Blog', 'Blog')}</Link>
+            <span>·</span>
+            <span className="text-primary font-medium">{t(post.categoryLabel.si, post.categoryLabel.en)}</span>
+            <span>·</span>
             <span>{post.publishDate}</span>
-            <span className="w-1 h-1 rounded-full bg-muted-foreground" />
-            <span>{post.readTime} min</span>
+            <span>·</span>
+            <span>{post.readTime} min {t('branja', 'read')}</span>
           </div>
 
-          <h1 className="font-heading font-extrabold text-3xl md:text-[40px] text-foreground mb-10 leading-[1.1] tracking-tight">
+          <h1 className="font-heading font-bold text-3xl md:text-4xl text-foreground mb-8 leading-tight">
             {t(post.title.si, post.title.en)}
           </h1>
 
           {/* Inline image */}
-          <div className="rounded-2xl overflow-hidden mb-10 border border-border">
+          <div className="rounded-2xl overflow-hidden mb-8 border border-border">
             <img src={post.inlineImage} alt="" className="w-full aspect-video object-cover" loading="lazy" />
           </div>
 
           {/* Content */}
           <div
             className="prose prose-lg max-w-none text-foreground
-              prose-headings:font-heading prose-headings:text-foreground prose-headings:tracking-tight
+              prose-headings:font-heading prose-headings:text-foreground
               prose-p:text-muted-foreground prose-p:leading-relaxed
               prose-strong:text-foreground
               prose-blockquote:border-l-primary prose-blockquote:text-muted-foreground prose-blockquote:italic
@@ -92,31 +91,31 @@ const BlogPostPage = () => {
           />
 
           {/* Author */}
-          <div className="mt-14 pt-8 border-t border-border flex items-center gap-4">
-            <div className="w-12 h-12 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary font-heading font-bold">
+          <div className="mt-12 pt-8 border-t border-border flex items-center gap-4">
+            <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
               AI
             </div>
             <div>
-              <div className="font-heading font-bold text-foreground">{post.author}</div>
-              <div className="text-[11px] uppercase tracking-[1.5px] text-muted-foreground">{t('AI Oglasi ekipa', 'AI Oglasi team')}</div>
+              <div className="font-semibold text-foreground">{post.author}</div>
+              <div className="text-sm text-muted-foreground">{t('AI Oglasi ekipa', 'AI Oglasi team')}</div>
             </div>
           </div>
         </motion.div>
 
-        {/* Related */}
+        {/* Related posts */}
         {related.length > 0 && (
-          <div className="mt-20 mb-16">
-            <h3 className="font-heading font-extrabold text-2xl text-foreground mb-8 tracking-tight">
+          <div className="mt-16 mb-16">
+            <h3 className="font-heading font-bold text-xl text-foreground mb-6">
               {t('Podobne objave', 'Related posts')}
             </h3>
             <div className="grid md:grid-cols-2 gap-6">
               {related.map((r) => (
-                <Link key={r.id} to={`/blog/${r.slug}`} className="group block rounded-2xl bg-card border border-border hover:border-primary/30 overflow-hidden transition-all duration-500">
+                <Link key={r.id} to={`/blog/${r.slug}`} className="group block rounded-2xl bg-card border border-border hover:border-primary/40 overflow-hidden transition-all">
                   <div className="aspect-video overflow-hidden">
-                    <img src={r.heroImage} alt={t(r.title.si, r.title.en)} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                    <img src={r.heroImage} alt={t(r.title.si, r.title.en)} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                   </div>
-                  <div className="p-5">
-                    <h4 className="font-heading font-bold text-card-foreground group-hover:text-primary transition-colors tracking-tight">
+                  <div className="p-4">
+                    <h4 className="font-heading font-semibold text-card-foreground group-hover:text-primary transition-colors">
                       {t(r.title.si, r.title.en)}
                     </h4>
                   </div>
@@ -127,18 +126,14 @@ const BlogPostPage = () => {
         )}
 
         {/* CTA */}
-        <div className="text-center p-12 rounded-3xl bg-hero-gradient border border-badge-border mb-16 relative overflow-hidden">
-          <div className="absolute inset-0 grain-overlay animate-grain pointer-events-none" />
-          <div className="relative z-10">
-            <h2 className="font-heading font-extrabold text-2xl md:text-3xl text-primary-foreground mb-3 tracking-tight">
-              {t('Potrebujete AI Vsebino?', 'Need AI Content?')}
-            </h2>
-            <p className="text-hero-muted mb-8">{t('Rezervirajte brezplačno posvetovanje.', 'Book a free consultation.')}</p>
-            <Link to="/kontakt" className="group inline-flex items-center gap-3 px-8 h-14 text-sm uppercase tracking-[1px] font-semibold rounded-full bg-primary text-primary-foreground shadow-glow-primary transition-all duration-300 hover:gap-5">
-              {t('Rezerviraj Klic', 'Book a Call')}
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
+        <div className="text-center p-10 rounded-3xl bg-hero-gradient border border-badge-border mb-16">
+          <h2 className="font-heading font-bold text-2xl text-primary-foreground mb-3">
+            {t('Potrebujete AI Vsebino?', 'Need AI Content?')}
+          </h2>
+          <p className="text-hero-muted mb-6">{t('Rezervirajte brezplačno posvetovanje.', 'Book a free consultation.')}</p>
+          <Link to="/kontakt" className="inline-flex items-center px-8 h-14 text-base font-semibold rounded-xl bg-primary text-primary-foreground shadow-glow-primary">
+            {t('Rezerviraj Posvetovanje →', 'Book Consultation →')}
+          </Link>
         </div>
       </article>
 

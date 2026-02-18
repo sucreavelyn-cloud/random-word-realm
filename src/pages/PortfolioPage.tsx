@@ -25,24 +25,23 @@ const PortfolioPage = () => {
       <Header />
 
       {/* Hero */}
-      <section className="pt-36 pb-20 bg-mesh-gradient relative overflow-hidden">
-        <div className="absolute inset-0 grain-overlay animate-grain pointer-events-none" />
-        <div className="container mx-auto px-4 md:px-6 text-center relative z-10">
+      <section className="pt-32 pb-16 bg-hero-gradient">
+        <div className="container mx-auto px-4 md:px-6 text-center">
           <motion.p
-            className="text-[11px] uppercase tracking-[3px] text-primary font-semibold mb-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            className="text-sm uppercase tracking-[1.5px] text-secondary font-medium mb-4"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease }}
           >
-            Portfolio
+            {t('Naš Portfolio', 'Our Portfolio')}
           </motion.p>
           <motion.h1
-            className="font-heading font-extrabold text-4xl md:text-[64px] leading-[0.95] tracking-tight text-primary-foreground mb-6"
+            className="font-heading font-bold text-4xl md:text-6xl text-primary-foreground mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease }}
           >
-            {t('Naše Delo', 'Our Work')}
+            {t('Projekti, Ki Govorijo Sami', 'Projects That Speak for Themselves')}
           </motion.h1>
           <motion.p
             className="text-lg text-hero-muted max-w-xl mx-auto"
@@ -51,25 +50,25 @@ const PortfolioPage = () => {
             transition={{ duration: 0.6, delay: 0.3, ease }}
           >
             {t(
-              'Oglejte si izbor naših najboljših projektov AI vsebine.',
-              'Browse a selection of our best AI content projects.'
+              'Oglejte si izbor naših najboljših projektov AI video oglasov in produktne fotografije.',
+              'Browse a selection of our best AI video ad and product photography projects.'
             )}
           </motion.p>
         </div>
       </section>
 
       {/* Filters */}
-      <section className="py-6 border-b border-border sticky top-20 z-40 bg-background/90 backdrop-blur-xl">
+      <section className="py-8 border-b border-border sticky top-16 z-40 bg-background/80 backdrop-blur-xl">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-wrap justify-center gap-2">
             {filterCategories.map((cat) => (
               <button
                 key={cat.key}
                 onClick={() => setActiveFilter(cat.key)}
-                className={`px-5 py-2 rounded-full text-[12px] uppercase tracking-[1px] font-medium transition-all duration-300 ${
+                className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                   activeFilter === cat.key
                     ? 'bg-primary text-primary-foreground shadow-glow-primary'
-                    : 'bg-muted text-muted-foreground hover:text-foreground'
+                    : 'bg-muted text-muted-foreground hover:bg-muted/80'
                 }`}
               >
                 {t(cat.label.si, cat.label.en)}
@@ -79,7 +78,7 @@ const PortfolioPage = () => {
         </div>
       </section>
 
-      {/* Grid */}
+      {/* Masonry Grid */}
       <section className="py-16">
         <div className="container mx-auto px-4 md:px-6">
           <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
@@ -89,33 +88,40 @@ const PortfolioPage = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
-                transition={{ duration: 0.6, delay: i * 0.06, ease }}
+                transition={{ duration: 0.6, delay: i * 0.08, ease }}
                 className="break-inside-avoid"
               >
                 <Link to={`/portfolio/${item.id}`} className="group block">
-                  <div className="relative rounded-2xl overflow-hidden bg-card border border-border hover:border-primary/30 transition-all duration-500">
+                  <div className="relative rounded-2xl overflow-hidden bg-card border border-border hover:border-primary/40 transition-all duration-300">
+                    {/* Thumbnail placeholder */}
                     <div
-                      className={`w-full bg-gradient-to-br from-primary/10 via-accent/5 to-secondary/10 flex items-center justify-center ${
+                      className={`w-full bg-gradient-to-br from-primary/20 via-accent/10 to-secondary/20 flex items-center justify-center ${
                         i % 3 === 0 ? 'aspect-[4/5]' : i % 3 === 1 ? 'aspect-square' : 'aspect-[4/3]'
                       }`}
                     >
                       <div className="text-4xl">{item.serviceType === 'video' ? '🎬' : '📸'}</div>
                     </div>
 
-                    <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/50 transition-all duration-500 flex items-center justify-center">
-                      <span className="text-primary-foreground font-heading font-bold text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 tracking-tight">
+                    {/* Overlay */}
+                    <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/60 transition-all duration-300 flex items-center justify-center">
+                      <span className="text-primary-foreground font-heading font-semibold text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         {t('Poglej več →', 'View more →')}
                       </span>
                     </div>
 
+                    {/* Tags */}
                     <div className="absolute top-3 left-3 flex gap-2">
-                      <span className="px-3 py-1 text-[10px] uppercase tracking-[1px] font-medium rounded-full bg-primary/80 text-primary-foreground backdrop-blur-sm">
+                      <span className="px-3 py-1 text-xs font-medium rounded-full bg-primary/80 text-primary-foreground backdrop-blur-sm">
                         {t(item.industry.si, item.industry.en)}
+                      </span>
+                      <span className="px-3 py-1 text-xs font-medium rounded-full bg-secondary/80 text-secondary-foreground backdrop-blur-sm">
+                        {item.serviceType === 'video' ? 'Video' : t('Foto', 'Photo')}
                       </span>
                     </div>
 
-                    <div className="p-5">
-                      <h3 className="font-heading font-bold text-card-foreground group-hover:text-primary transition-colors tracking-tight">
+                    {/* Title bar */}
+                    <div className="p-4">
+                      <h3 className="font-heading font-semibold text-card-foreground group-hover:text-primary transition-colors">
                         {t(item.title.si, item.title.en)}
                       </h3>
                     </div>

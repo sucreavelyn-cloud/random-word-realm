@@ -1,47 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 40 20% 97%;
-    --foreground: 220 20% 10%;
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
 
-    --card: 40 15% 95%;
-    --card-foreground: 220 20% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
 
-    --popover: 40 15% 95%;
-    --popover-foreground: 220 20% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 160 84% 36%;
+    --primary: 217 91% 60%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 32 95% 55%;
+    --secondary: 24 95% 53%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 40 10% 91%;
-    --muted-foreground: 220 10% 45%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 280 60% 55%;
+    --accent: 258 90% 66%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 40 10% 88%;
-    --input: 40 10% 88%;
-    --ring: 160 84% 36%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 217 91% 60%;
 
     --radius: 0.75rem;
 
-    /* Brand tokens */
-    --hero-bg-from: 220 20% 8%;
-    --hero-bg-to: 220 15% 13%;
-    --hero-text-muted: 220 10% 55%;
-    --badge-bg: 220 15% 14%;
-    --badge-border: 220 12% 22%;
+    /* AI Oglasi brand tokens */
+    --hero-bg-from: 222 47% 11%;
+    --hero-bg-to: 217 33% 17%;
+    --hero-text-muted: 215 20% 65%;
+    --badge-bg: 217 33% 17%;
+    --badge-border: 217 24% 27%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -50,46 +48,46 @@
     --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 160 84% 36%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 220 20% 8%;
-    --foreground: 40 20% 95%;
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
 
-    --card: 220 15% 12%;
-    --card-foreground: 40 20% 95%;
+    --card: 217 33% 17%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 220 15% 12%;
-    --popover-foreground: 40 20% 95%;
+    --popover: 217 33% 17%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 160 84% 39%;
+    --primary: 217 91% 60%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 32 95% 55%;
+    --secondary: 24 95% 53%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 15% 15%;
-    --muted-foreground: 220 10% 55%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 280 60% 60%;
+    --accent: 258 90% 66%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 63% 31%;
-    --destructive-foreground: 40 20% 95%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 220 12% 22%;
-    --input: 220 12% 22%;
-    --ring: 160 84% 39%;
+    --border: 217 24% 27%;
+    --input: 217 24% 27%;
+    --ring: 217 91% 60%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 160 84% 39%;
+    --sidebar-primary: 224.3 76.3% 48%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 3.7% 15.9%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 160 84% 39%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -100,11 +98,11 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
   }
 
   html {
@@ -115,24 +113,11 @@
 @layer utilities {
   .text-gradient-brand {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
-  }
-
-  .text-gradient-warm {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--primary)));
+    background-image: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--accent)));
   }
 
   .bg-hero-gradient {
-    background: linear-gradient(160deg, hsl(var(--hero-bg-from)), hsl(var(--hero-bg-to)));
-  }
-
-  .bg-mesh-gradient {
-    background: 
-      radial-gradient(ellipse at 20% 50%, hsl(var(--primary) / 0.08) 0%, transparent 50%),
-      radial-gradient(ellipse at 80% 20%, hsl(var(--accent) / 0.06) 0%, transparent 50%),
-      radial-gradient(ellipse at 60% 80%, hsl(var(--secondary) / 0.05) 0%, transparent 50%),
-      linear-gradient(160deg, hsl(var(--hero-bg-from)), hsl(var(--hero-bg-to)));
+    background: linear-gradient(135deg, hsl(var(--hero-bg-from)), hsl(var(--hero-bg-to)));
   }
 
   .border-gradient-brand {
@@ -140,22 +125,14 @@
   }
 
   .shadow-glow-primary {
-    box-shadow: 0 0 40px -8px hsl(var(--primary) / 0.35);
+    box-shadow: 0 0 30px -5px hsl(var(--primary) / 0.4);
   }
 
   .shadow-glow-secondary {
-    box-shadow: 0 0 40px -8px hsl(var(--secondary) / 0.35);
+    box-shadow: 0 0 30px -5px hsl(var(--secondary) / 0.4);
   }
 
   .grain-overlay {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-  }
-
-  .glass-card {
-    @apply bg-badge-bg/60 backdrop-blur-xl border border-badge-border;
-  }
-
-  .hover-lift {
-    @apply transition-all duration-500 hover:-translate-y-2 hover:shadow-xl;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
   }
 }
