@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ['"Space Grotesk"', 'sans-serif'],
-        body: ['"Inter"', 'sans-serif'],
+        heading: ['"Syne"', 'sans-serif'],
+        body: ['"DM Sans"', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -113,9 +113,13 @@ export default {
           "0%, 100%": { opacity: "0.03" },
           "50%": { opacity: "0.05" },
         },
-        "underline-grow": {
-          "0%": { width: "0%" },
-          "100%": { width: "100%" },
+        "marquee": {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        "line-grow": {
+          "0%": { scaleY: "0" },
+          "100%": { scaleY: "1" },
         },
       },
       animation: {
@@ -128,7 +132,8 @@ export default {
         "pulse-ring": "pulse-ring 1.5s ease-out",
         "bounce-gentle": "bounce-gentle 1.5s ease-in-out infinite",
         "grain": "grain 4s ease-in-out infinite",
-        "underline-grow": "underline-grow 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards",
+        "marquee": "marquee 30s linear infinite",
+        "line-grow": "line-grow 1s ease-out forwards",
       },
     },
   },
