@@ -172,7 +172,7 @@ const AboutPage = () => {
             </h2>
             <p className="text-hero-muted mb-6">{t('Kontaktirajte nas za brezplačno posvetovanje.', 'Contact us for a free consultation.')}</p>
             <Link to="/kontakt" className="inline-flex items-center px-8 h-14 text-base font-semibold rounded-xl bg-primary text-primary-foreground shadow-glow-primary">
-              {t('Kontaktirajte Nas →', 'Contact Us →')}
+              {t('Rezerviraj Klic →', 'Book a Call →')}
             </Link>
           </div>
         </div>

@@ -7,7 +7,7 @@ import TechSpecs from '@/components/services/TechSpecs';
 import ProcessSteps from '@/components/services/ProcessSteps';
 import ServiceFAQ from '@/components/services/ServiceFAQ';
 import PricingGuide from '@/components/services/PricingGuide';
-import BookingForm from '@/components/services/BookingForm';
+
 
 const photoUseCases = [
   {
@@ -117,7 +117,6 @@ const AIPhotoPage = () => {
       <ProcessSteps steps={photoProcess} />
       <ServiceFAQ items={photoFAQ} />
       <PricingGuide tiers={photoPricing} />
-      <BookingForm />
       <Footer />
     </main>
   );

@@ -7,7 +7,7 @@ import TechSpecs from '@/components/services/TechSpecs';
 import ProcessSteps from '@/components/services/ProcessSteps';
 import ServiceFAQ from '@/components/services/ServiceFAQ';
 import PricingGuide from '@/components/services/PricingGuide';
-import BookingForm from '@/components/services/BookingForm';
+
 
 const videoUseCases = [
   {
@@ -118,7 +118,6 @@ const AIVideoPage = () => {
       <ProcessSteps steps={videoProcess} />
       <ServiceFAQ items={videoFAQ} />
       <PricingGuide tiers={videoPricing} />
-      <BookingForm />
       <Footer />
     </main>
   );

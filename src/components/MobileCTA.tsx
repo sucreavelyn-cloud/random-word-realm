@@ -10,7 +10,7 @@ const MobileCTA = () => {
         to="/kontakt"
         className="flex items-center justify-center w-full h-12 rounded-xl bg-primary text-primary-foreground font-semibold text-sm shadow-glow-primary"
       >
-        {t('Rezerviraj Posvetovanje →', 'Book Consultation →')}
+        {t('Rezerviraj Klic →', 'Book a Call →')}
       </Link>
     </div>
   );

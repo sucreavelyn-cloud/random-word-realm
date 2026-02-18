@@ -43,7 +43,7 @@ const Footer = () => {
               
               <li><Link to="/portfolio" className="text-hero-muted hover:text-primary-foreground transition-colors">Portfolio</Link></li>
               <li><Link to="/blog" className="text-hero-muted hover:text-primary-foreground transition-colors">Blog</Link></li>
-              <li><Link to="/kontakt" className="text-hero-muted hover:text-primary-foreground transition-colors">{t('Kontakt', 'Contact')}</Link></li>
+              
             </ul>
           </div>
 
