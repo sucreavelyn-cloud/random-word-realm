@@ -54,7 +54,7 @@ const HeroSection = () => {
             whileHover={{ y: -4, boxShadow: '0 0 50px -5px hsl(217 91% 60% / 0.5)' }}
             whileTap={{ scale: 0.97 }}
           >
-            {t('Rezerviraj Brezplačno Posvetovanje →', 'Book Free Consultation →')}
+            {t('Rezerviraj Klic →', 'Book a Call →')}
           </motion.a>
         </motion.div>
       </div>

@@ -42,7 +42,7 @@ const FinalCTA = () => {
             to="/kontakt"
             className="inline-flex items-center justify-center h-14 px-10 text-base font-semibold rounded-xl bg-primary text-primary-foreground shadow-glow-primary transition-all duration-300 hover:scale-105 hover:-translate-y-1"
           >
-            {t('Rezerviraj Brezplačno Posvetovanje →', 'Book Free Consultation →')}
+            {t('Rezerviraj Klic →', 'Book a Call →')}
           </Link>
         </motion.div>
       </div>

@@ -14,7 +14,6 @@ import CaseStudyPage from "./pages/CaseStudyPage";
 import BlogPage from "./pages/BlogPage";
 import BlogPostPage from "./pages/BlogPostPage";
 
-import ContactPage from "./pages/ContactPage";
 import PricingPage from "./pages/PricingPage";
 import NotFound from "./pages/NotFound";
 
@@ -37,7 +36,6 @@ const App = () => (
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:slug" element={<BlogPostPage />} />
             {/* About page removed */}
-            <Route path="/kontakt" element={<ContactPage />} />
             <Route path="/cenik" element={<PricingPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

@@ -25,7 +25,7 @@ const Header = () => {
     { label: 'Blog', to: '/blog' },
     
     { label: t('Cenik', 'Pricing'), to: '/cenik' },
-    { label: t('Kontakt', 'Contact'), to: '/kontakt' },
+    
   ];
 
   return (
@@ -92,7 +92,7 @@ const Header = () => {
               to="/kontakt"
               className="hidden lg:inline-flex items-center px-4 py-2 text-sm font-medium rounded-lg bg-primary text-primary-foreground hover:shadow-glow-primary transition-all duration-200"
             >
-              {t('Kontakt', 'Contact')}
+              {t('Rezerviraj Klic', 'Book a Call')}
             </Link>
 
             {/* Mobile hamburger */}
@@ -141,7 +141,7 @@ const Header = () => {
                   onClick={() => setMobileOpen(false)}
                   className="mt-2 flex items-center justify-center px-4 py-3 text-sm font-medium rounded-lg bg-primary text-primary-foreground"
                 >
-                  {t('Rezerviraj Posvetovanje', 'Book Consultation')}
+                  {t('Rezerviraj Klic', 'Book a Call')}
                 </Link>
               </nav>
             </motion.div>

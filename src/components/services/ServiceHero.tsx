@@ -55,7 +55,7 @@ const ServiceHero = ({ eyebrow, title, subtitle, gradient }: ServiceHeroProps) =
             whileHover={{ y: -3 }}
             whileTap={{ scale: 0.97 }}
           >
-            {t('Rezerviraj Posvetovanje →', 'Book Consultation →')}
+            {t('Rezerviraj Klic →', 'Book a Call →')}
           </motion.a>
           <motion.a
             href="#process"

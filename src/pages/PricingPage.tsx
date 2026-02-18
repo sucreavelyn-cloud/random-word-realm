@@ -53,7 +53,7 @@ const tiers = [
       { si: 'API integracija', en: 'API integration' },
       { si: 'SLA garancije', en: 'SLA guarantees' },
     ],
-    cta: { si: 'Kontaktirajte Nas', en: 'Contact Us' },
+    cta: { si: 'Rezerviraj Klic', en: 'Book a Call' },
     gradient: 'from-accent/10 to-accent/5',
     border: 'border-accent/20',
   },
