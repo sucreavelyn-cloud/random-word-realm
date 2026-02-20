@@ -6,36 +6,36 @@ import { ChevronDown } from 'lucide-react';
 
 const faqItems = [
   {
-    q: { si: 'Koliko stane projekt AI vsebine?', en: 'How much does an AI content project cost?' },
-    a: { si: 'Cene se začnejo pri €149 za AI produktno fotografijo in €299 za AI video oglase. Točna cena je odvisna od obsega projekta, števila različic in specifičnih zahtev. Kontaktirajte nas za brezplačno ponudbo.', en: 'Prices start at €149 for AI product photography and €299 for AI video ads. The exact price depends on project scope, number of variants and specific requirements. Contact us for a free quote.' },
+    q: { si: 'Koliko stane projekt z AI vsebinami?', en: 'How much does an AI content project cost?' },
+    a: { si: 'Cene se začnejo pri 149 € za AI produktno fotografijo in 299 € za AI video oglase. Končna cena je odvisna od obsega projekta, števila različic in posebnih zahtev. Pišite nam za brezplačno ponudbo.', en: 'Prices start at €149 for AI product photography and €299 for AI video ads. The exact price depends on project scope, number of variants and specific requirements. Contact us for a free quote.' },
   },
   {
-    q: { si: 'Kako dolgo traja dostava?', en: 'How long does delivery take?' },
-    a: { si: 'Standardna dostava je 24 ur od potrditve projekta. Za kompleksnejše projekte ali večje količine vsebine se rok lahko podaljša na 3-5 dni. Vedno vas obvestimo o točnem roku pred začetkom dela.', en: 'Standard delivery is 24 hours from project confirmation. For more complex projects or larger volumes, the deadline may extend to 3-5 days. We always inform you of the exact timeline before starting.' },
+    q: { si: 'Kako hitro dobim končni izdelek?', en: 'How long does delivery take?' },
+    a: { si: 'Običajna dostava je 24 ur od potrditve projekta. Pri zahtevnejših projektih ali večjih količinah se rok lahko podaljša na 3–5 dni. Pred začetkom vam vedno sporočimo natančen rok.', en: 'Standard delivery is 24 hours from project confirmation. For more complex projects or larger volumes, the deadline may extend to 3-5 days. We always inform you of the exact timeline before starting.' },
   },
   {
-    q: { si: 'Ali lahko vidim primere vašega dela?', en: 'Can I see examples of your work?' },
-    a: { si: 'Seveda! Naša portfolijo stran prikazuje različne projekte iz različnih industrij. Prav tako lahko zahtevate primere iz specifične industrije, ki vas zanima. Kontaktirajte nas za dostop do polnega portfolija.', en: 'Of course! Our portfolio page showcases various projects from different industries. You can also request examples from your specific industry. Contact us for full portfolio access.' },
+    q: { si: 'Lahko vidim primere vašega dela?', en: 'Can I see examples of your work?' },
+    a: { si: 'Seveda! Na naši portfolijo strani najdete projekte iz različnih panog. Prav tako vam lahko prikažemo primere iz vaše specifične branže. Pišite nam za dostop do celotnega portfolija.', en: 'Of course! Our portfolio page showcases various projects from different industries. You can also request examples from your specific industry. Contact us for full portfolio access.' },
   },
   {
-    q: { si: 'Kaj potrebujem, da začnem projekt?', en: 'What do I need to start a project?' },
-    a: { si: 'Za video oglase potrebujemo osnovni opis vašega produkta/storitve, ciljno občinstvo in želene rezultate. Za fotografijo zadostujejo osnovne produktne fotografije ali opisi. Vse ostalo uredimo mi!', en: 'For video ads we need a basic description of your product/service, target audience and desired results. For photography, basic product photos or descriptions are enough. We handle everything else!' },
+    q: { si: 'Kaj potrebujete od nas za začetek?', en: 'What do I need to start a project?' },
+    a: { si: 'Za video oglase potrebujemo kratek opis vašega produkta oz. storitve, podatke o ciljnem občinstvu in želene rezultate. Za fotografijo zadostujejo osnovne slike izdelkov ali njihov opis. Za vse ostalo poskrbimo mi!', en: 'For video ads we need a basic description of your product/service, target audience and desired results. For photography, basic product photos or descriptions are enough. We handle everything else!' },
   },
   {
-    q: { si: 'Ali ponujate revizije?', en: 'Do you offer revisions?' },
-    a: { si: 'Da! V ceno projekta je vključenih do 2 brezplačnih revizij. Tako zagotovimo, da je končni rezultat popolnoma v skladu z vašimi pričakovanji. Dodatne revizije so na voljo po ugodni ceni.', en: 'Yes! Up to 2 free revisions are included in the project price. This ensures the final result perfectly matches your expectations. Additional revisions are available at a fair price.' },
+    q: { si: 'Ali so popravki vključeni v ceno?', en: 'Do you offer revisions?' },
+    a: { si: 'Da! V ceno sta vključena do 2 brezplačna popravka, s čimer zagotovimo, da je končni rezultat točno tak, kot si ga želite. Dodatni popravki so na voljo po ugodni ceni.', en: 'Yes! Up to 2 free revisions are included in the project price. This ensures the final result perfectly matches your expectations. Additional revisions are available at a fair price.' },
   },
   {
-    q: { si: 'V katerih formatih dobim vsebino?', en: 'In which formats do I receive content?' },
-    a: { si: 'Video vsebino dostavimo v MP4, MOV ali kateremkoli drugem formatu, ki ga potrebujete. Fotografije v PNG, JPG ali RAW. Vse v visoki ločljivosti, pripravljeno za uporabo na katerikoli platformi.', en: 'We deliver video content in MP4, MOV or any other format you need. Photos in PNG, JPG or RAW. All in high resolution, ready for use on any platform.' },
+    q: { si: 'V kakšnih formatih dobim vsebino?', en: 'In which formats do I receive content?' },
+    a: { si: 'Video vsebine dostavimo v MP4, MOV ali kateremkoli drugem formatu, ki ga potrebujete. Fotografije v PNG, JPG ali RAW. Vse v visoki ločljivosti, pripravljeno za takojšnjo uporabo na katerikoli platformi.', en: 'We deliver video content in MP4, MOV or any other format you need. Photos in PNG, JPG or RAW. All in high resolution, ready for use on any platform.' },
   },
   {
-    q: { si: 'Ali delate tudi z mednarodnimi strankami?', en: 'Do you work with international clients?' },
-    a: { si: 'Da! Čeprav smo slovensko podjetje, delamo s strankami po vsej Evropi. Komunikacija poteka v slovenščini ali angleščini, proces pa je popolnoma digitalen in enostaven.', en: 'Yes! Although we\'re a Slovenian company, we work with clients across Europe. Communication is in Slovenian or English, and the process is fully digital and simple.' },
+    q: { si: 'Ali sodelujete tudi z mednarodnimi strankami?', en: 'Do you work with international clients?' },
+    a: { si: 'Da! Čeprav smo slovensko podjetje, sodelujemo s strankami po vsej Evropi. Komuniciramo v slovenščini ali angleščini, celoten proces pa je digitalen in povsem preprost.', en: 'Yes! Although we\'re a Slovenian company, we work with clients across Europe. Communication is in Slovenian or English, and the process is fully digital and simple.' },
   },
   {
-    q: { si: 'Kaj če nisem zadovoljen z rezultatom?', en: 'What if I\'m not satisfied with the result?' },
-    a: { si: 'Vaše zadovoljstvo je naša prioriteta. Če rezultat ne ustreza vašim pričakovanjem, bomo projekt popravili do vaše popolne zadovoljnosti ali vam vrnili denar. Brez skritih stroškov.', en: 'Your satisfaction is our priority. If the result doesn\'t meet your expectations, we\'ll revise the project until you\'re fully satisfied or refund your money. No hidden costs.' },
+    q: { si: 'Kaj če z rezultatom ne bom zadovoljen?', en: 'What if I\'m not satisfied with the result?' },
+    a: { si: 'Vaše zadovoljstvo je na prvem mestu. Če rezultat ne ustreza vašim pričakovanjem, ga bomo popravili, dokler ne boste povsem zadovoljni — ali pa vam vrnemo denar. Brez skritih stroškov.', en: 'Your satisfaction is our priority. If the result doesn\'t meet your expectations, we\'ll revise the project until you\'re fully satisfied or refund your money. No hidden costs.' },
   },
 ];
 
@@ -112,13 +112,13 @@ const HomeFAQ = () => {
           transition={{ duration: 0.5 }}
         >
           <p className="text-lg text-hero-muted mb-6">
-            {t('Imate še vedno vprašanja? Tu smo, da vam pomagamo.', 'Still have questions? We\'re here to help.')}
+            {t('Imate dodatna vprašanja? Z veseljem vam pomagamo.', 'Still have questions? We\'re here to help.')}
           </p>
           <Link
             to="/kontakt"
             className="inline-flex items-center justify-center h-14 px-10 text-base font-semibold rounded-xl bg-primary text-primary-foreground shadow-glow-primary transition-all duration-300 hover:scale-105 hover:-translate-y-1"
           >
-            {t('_REZERVIRAJ KLIC', '_BOOK A CALL')}
+            {t('REZERVIRAJ KLIC', 'BOOK A CALL')}
           </Link>
         </motion.div>
       </div>

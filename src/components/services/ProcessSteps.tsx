@@ -25,7 +25,7 @@ const ProcessSteps = ({ steps }: ProcessStepsProps) => {
           viewport={{ once: true, amount: 0.15 }}
           transition={{ duration: 0.6 }}
         >
-          {t('Naš Proces', 'Our Process')}
+          {t('Naš postopek', 'Our Process')}
         </motion.h2>
         <motion.p
           className="text-hero-muted text-center mb-16 max-w-lg mx-auto"

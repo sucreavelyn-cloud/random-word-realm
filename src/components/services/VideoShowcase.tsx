@@ -18,7 +18,7 @@ const VideoShowcase = ({ placeholderCount = 3 }: VideoShowcaseProps) => {
           viewport={{ once: true, amount: 0.15 }}
           transition={{ duration: 0.6 }}
         >
-          {t('Primeri Naših Del', 'Our Work Examples')}
+          {t('Primeri naših del', 'Our Work Examples')}
         </motion.h2>
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {Array.from({ length: placeholderCount }).map((_, i) => (
@@ -41,7 +41,7 @@ const VideoShowcase = ({ placeholderCount = 3 }: VideoShowcaseProps) => {
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-foreground/80 to-transparent">
                 <p className="text-primary-foreground text-sm font-medium">
-                  {t(`Video Primer ${i + 1}`, `Video Example ${i + 1}`)}
+                  {t(`Video primer ${i + 1}`, `Video Example ${i + 1}`)}
                 </p>
               </div>
             </motion.div>

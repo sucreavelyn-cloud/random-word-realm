@@ -34,7 +34,7 @@ const PricingGuide = ({ tiers }: PricingGuideProps) => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          {t('Transparentne cene brez skritih stroškov.', 'Transparent pricing with no hidden costs.')}
+          {t('Pregledne cene brez skritih stroškov.', 'Transparent pricing with no hidden costs.')}
         </motion.p>
 
         <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
@@ -54,7 +54,7 @@ const PricingGuide = ({ tiers }: PricingGuideProps) => {
             >
               {tier.highlighted && (
                 <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 text-xs font-semibold rounded-full bg-primary text-primary-foreground">
-                  {t('Najbolj Priljubljeno', 'Most Popular')}
+                  {t('Najpogostejša izbira', 'Most Popular')}
                 </span>
               )}
               <h3 className="font-heading font-bold text-xl text-foreground mb-2">
@@ -81,7 +81,7 @@ const PricingGuide = ({ tiers }: PricingGuideProps) => {
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.97 }}
               >
-                {t('Izberi Paket', 'Choose Plan')}
+                {t('Izberite paket', 'Choose Plan')}
               </motion.a>
             </motion.div>
           ))}

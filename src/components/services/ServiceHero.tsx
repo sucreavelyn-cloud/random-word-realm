@@ -8,9 +8,10 @@ interface ServiceHeroProps {
   title: { si: string; en: string };
   subtitle: { si: string; en: string };
   gradient: 'blue' | 'orange';
+  ctaText?: { si: string; en: string };
 }
 
-const ServiceHero = ({ eyebrow, title, subtitle, gradient }: ServiceHeroProps) => {
+const ServiceHero = ({ eyebrow, title, subtitle, gradient, ctaText }: ServiceHeroProps) => {
   const { t } = useLanguage();
 
   return (
@@ -55,7 +56,7 @@ const ServiceHero = ({ eyebrow, title, subtitle, gradient }: ServiceHeroProps) =
             whileHover={{ y: -3 }}
             whileTap={{ scale: 0.97 }}
           >
-            {t('Rezerviraj Klic →', 'Book a Call →')}
+            {ctaText ? t(ctaText.si, ctaText.en) : t('Rezerviraj klic →', 'Book a Call →')}
           </motion.a>
           <motion.a
             href="#process"

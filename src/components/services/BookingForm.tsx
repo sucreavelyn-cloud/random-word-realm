@@ -45,7 +45,7 @@ const BookingForm = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          {t('Rezerviraj Posvetovanje', 'Book a Consultation')}
+          {t('Rezervirajte posvet', 'Book a Consultation')}
         </motion.h2>
         <motion.p
           className="text-hero-muted text-center mb-12 max-w-lg mx-auto"
@@ -54,7 +54,7 @@ const BookingForm = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          {t('Brezplačno 15-minutno posvetovanje o vašem projektu.', 'Free 15-minute consultation about your project.')}
+          {t('Brezplačen 30-minutni pogovor o vašem projektu.', 'Free 30-minute consultation about your project.')}
         </motion.p>
 
         <motion.div
@@ -75,7 +75,7 @@ const BookingForm = () => {
                 {t('Hvala!', 'Thank you!')}
               </h3>
               <p className="text-hero-muted">
-                {t('Kontaktirali vas bomo v 24 urah.', 'We will contact you within 24 hours.')}
+                {t('Javili se vam bomo v 24 urah.', 'We will contact you within 24 hours.')}
               </p>
             </motion.div>
           ) : (
@@ -93,7 +93,7 @@ const BookingForm = () => {
               <div>
                 <input
                   type="email"
-                  placeholder={t('E-pošta *', 'Email *')}
+                  placeholder={t('E-naslov *', 'Email *')}
                   value={form.email}
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
                   className={inputClass}
@@ -103,7 +103,7 @@ const BookingForm = () => {
               <div>
                 <input
                   type="text"
-                  placeholder={t('Podjetje (opcijsko)', 'Company (optional)')}
+                  placeholder={t('Podjetje (neobvezno)', 'Company (optional)')}
                   value={form.company}
                   onChange={(e) => setForm({ ...form, company: e.target.value })}
                   className={inputClass}
@@ -125,7 +125,7 @@ const BookingForm = () => {
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.97 }}
               >
-                {t('Pošlji Povpraševanje →', 'Send Inquiry →')}
+                {t('Pošljite povpraševanje →', 'Send Inquiry →')}
               </motion.button>
             </form>
           )}

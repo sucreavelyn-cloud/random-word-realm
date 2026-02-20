@@ -1,24 +1,22 @@
-import React, { createContext, useContext, useState, useCallback } from 'react';
+import { createContext, useContext, useState, ReactNode } from 'react';
 
-type Lang = 'si' | 'en';
+type Language = 'si' | 'en';
 
 interface LanguageContextType {
-  lang: Lang;
-  setLang: (lang: Lang) => void;
+  language: Language;
+  setLanguage: (lang: Language) => void;
   t: (si: string, en: string) => string;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [lang, setLang] = useState<Lang>('si');
+export const LanguageProvider = ({ children }: { children: ReactNode }) => {
+  const [language, setLanguage] = useState<Language>('en');
 
-  const t = useCallback((si: string, en: string) => {
-    return lang === 'si' ? si : en;
-  }, [lang]);
+  const t = (si: string, en: string) => (language === 'si' ? si : en);
 
   return (
-    <LanguageContext.Provider value={{ lang, setLang, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   );

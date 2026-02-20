@@ -9,12 +9,12 @@ const GalleryGrid = ({ count = 6 }: GalleryGridProps) => {
   const { t } = useLanguage();
 
   const labels = [
-    { si: 'E-commerce Produkt', en: 'E-commerce Product' },
-    { si: 'Lifestyle Scena', en: 'Lifestyle Scene' },
-    { si: 'Kataložna Fotografija', en: 'Catalog Photography' },
-    { si: 'Odstranitev Ozadja', en: 'Background Removal' },
-    { si: 'Socialna Omrežja', en: 'Social Media' },
-    { si: 'Marketinški Material', en: 'Marketing Material' },
+    { si: 'Spletna trgovina', en: 'E-commerce Product' },
+    { si: 'Lifestyle prizor', en: 'Lifestyle Scene' },
+    { si: 'Kataložna slika', en: 'Catalog Photography' },
+    { si: 'Odstranitev ozadja', en: 'Background Removal' },
+    { si: 'Družbena omrežja', en: 'Social Media' },
+    { si: 'Marketinški material', en: 'Marketing Material' },
   ];
 
   return (
@@ -27,7 +27,7 @@ const GalleryGrid = ({ count = 6 }: GalleryGridProps) => {
           viewport={{ once: true, amount: 0.15 }}
           transition={{ duration: 0.6 }}
         >
-          {t('Galerija Primerov', 'Examples Gallery')}
+          {t('Galerija primerov', 'Examples Gallery')}
         </motion.h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
           {Array.from({ length: count }).map((_, i) => (

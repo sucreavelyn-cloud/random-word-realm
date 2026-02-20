@@ -1,9 +1,10 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useBooking } from '@/contexts/BookingContext';
 
 const StillQuestions = () => {
   const { t } = useLanguage();
+  const { setDialogOpen } = useBooking();
 
   return (
     <section className="py-16 md:py-24 bg-hero-gradient relative overflow-hidden">
@@ -16,7 +17,7 @@ const StillQuestions = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          {t('Še vedno imate vprašanja? Tu smo za vas.', 'Still have questions? We\'re here to help.')}
+          {t('Imate dodatna vprašanja? Z veseljem vam pomagamo.', 'Still have questions? We\'re here to help.')}
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 15 }}
@@ -24,12 +25,12 @@ const StillQuestions = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.15 }}
         >
-          <Link
-            to="/kontakt"
+          <button
+            onClick={() => setDialogOpen(true)}
             className="inline-flex items-center justify-center h-14 px-10 text-base font-semibold rounded-xl bg-accent text-accent-foreground tracking-wide uppercase transition-all duration-300 hover:scale-105 hover:-translate-y-1 shadow-[0_0_30px_-5px_hsl(var(--accent)/0.4)]"
           >
-            {t('_REZERVIRAJ KLIC', '_BOOK A CALL')}
-          </Link>
+            {t('REZERVIRAJ KLIC', 'BOOK A CALL')}
+          </button>
         </motion.div>
       </div>
     </section>

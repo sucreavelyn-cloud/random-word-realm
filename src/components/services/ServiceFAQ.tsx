@@ -26,7 +26,7 @@ const ServiceFAQ = ({ items }: ServiceFAQProps) => {
           viewport={{ once: true, amount: 0.15 }}
           transition={{ duration: 0.6 }}
         >
-          {t('Pogosta Vprašanja', 'Frequently Asked Questions')}
+          {t('Pogosta vprašanja', 'Frequently Asked Questions')}
         </motion.h2>
         <div className="max-w-2xl mx-auto space-y-3">
           {items.map((item, i) => (

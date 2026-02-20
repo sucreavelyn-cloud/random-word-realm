@@ -11,9 +11,9 @@ const caseStudies = [
     statLabel: { si: 'Prodaja', en: 'Sales' },
     industry: 'E-Commerce',
     service: 'AI Video',
-    title: { si: 'Povečanje Prodaje za 150% z AI Video Oglasi', en: '150% Sales Increase with AI Video Ads' },
+    title: { si: '150 % več prodaje z AI video oglasi', en: '150% Sales Increase with AI Video Ads' },
     desc: {
-      si: 'E-trgovini smo pomagali doseči izjemne rezultate z AI generiranimi video oglasi na Instagram in Facebook.',
+      si: 'Spletni trgovini smo pomagali doseči izjemne rezultate z AI video oglasi na Instagramu in Facebooku.',
       en: 'We helped an e-shop achieve incredible results with AI-generated video ads on Instagram and Facebook.',
     },
     accent: 'primary',
@@ -24,10 +24,10 @@ const caseStudies = [
     stat: '+80%',
     statLabel: { si: 'Rezervacije', en: 'Bookings' },
     industry: { si: 'Gostinstvo', en: 'Hospitality' },
-    service: { si: 'AI Fotografija', en: 'AI Photography' },
-    title: { si: 'Profesionalne Food Fotografije Brez Fotografa', en: 'Professional Food Photos Without a Photographer' },
+    service: { si: 'AI fotografija', en: 'AI Photography' },
+    title: { si: 'Profesionalne fotografije hrane brez fotografa', en: 'Professional Food Photos Without a Photographer' },
     desc: {
-      si: 'Restavracija je s pomočjo AI fotografije preoblikovala svojo celotno spletno prisotnost.',
+      si: 'Restavracija je s pomočjo AI fotografije povsem preoblikovala svojo spletno podobo.',
       en: 'A restaurant transformed its entire web presence with AI photography.',
     },
     accent: 'secondary',
@@ -36,12 +36,12 @@ const caseStudies = [
     id: 'fitness-influencer',
     icon: Dumbbell,
     stat: '2M+',
-    statLabel: { si: 'Ogledi', en: 'Views' },
+    statLabel: { si: 'Ogledov', en: 'Views' },
     industry: 'Fitness',
     service: 'AI Video',
-    title: { si: 'Viral TikTok Kampanja v 48 Urah', en: 'Viral TikTok Campaign in 48 Hours' },
+    title: { si: 'Viralna TikTok kampanja v 48 urah', en: 'Viral TikTok Campaign in 48 Hours' },
     desc: {
-      si: 'Fitness influencer je z našimi AI video rešitvami dosegel 2M+ ogledov na TikToku.',
+      si: 'Fitness influencer je z našimi AI video rešitvami presegel 2 milijona ogledov na TikToku.',
       en: 'A fitness influencer achieved 2M+ TikTok views with our AI video solutions.',
     },
     accent: 'accent',
@@ -66,7 +66,7 @@ const CaseStudiesPreview = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          {t('NAŠE DELO', 'OUR WORK')}
+          {t('NAŠI PROJEKTI', 'OUR WORK')}
         </motion.p>
         <motion.h2
           className="font-heading font-bold text-3xl md:text-[48px] md:leading-tight text-primary-foreground text-center mt-4 mb-6"
@@ -75,7 +75,7 @@ const CaseStudiesPreview = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.1 }}
         >
-          {t('Projekti, Ki Govorijo Zase', 'Projects That Speak for Themselves')}
+          {t('Projekti, ki govorijo zase', 'Projects That Speak for Themselves')}
         </motion.h2>
         <motion.p
           className="text-lg text-hero-muted text-center max-w-[600px] mx-auto mb-16"
@@ -85,7 +85,7 @@ const CaseStudiesPreview = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           {t(
-            'Poglej, kako smo pomagali slovenskim podjetjem rasti z AI vsebino',
+            'Poglejte, kako smo slovenskim podjetjem pomagali rasti z AI vsebinami.',
             'See how we helped Slovenian businesses grow with AI content'
           )}
         </motion.p>
@@ -135,7 +135,7 @@ const CaseStudiesPreview = () => {
                 to={`/portfolio/${cs.id}`}
                 className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-all duration-300"
               >
-                {t('Preberi več', 'Read more')}
+                {t('Več o projektu', 'Read more')}
                 <ArrowUpRight className="w-4 h-4" />
               </Link>
             </motion.div>
@@ -154,7 +154,7 @@ const CaseStudiesPreview = () => {
             to="/portfolio"
             className="inline-flex items-center gap-2 px-8 py-3.5 text-base border border-badge-border text-primary-foreground rounded-xl font-semibold transition-all duration-300 hover:bg-badge-bg hover:border-primary/40"
           >
-            {t('Poglej Vse Projekte', 'View All Projects')}
+            {t('Vsi projekti', 'View All Projects')}
             <ArrowUpRight className="w-4 h-4" />
           </Link>
         </motion.div>
